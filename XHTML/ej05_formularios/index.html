@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- Manejo de formularios -->
+<html>
+	<head>
+		<title> Formularios (Form/Input) </title>
+	<!-- Formato de codificación de caracteres -->
+	    <meta charset="utf-8">
+	<!-- Lenguaje de la página -->
+	   	<meta lang="en">
+
+	    <link rel="stylesheet" href="css/style.css" />
+	    <script type="text/javascript" src="js/scripts.js"></script>
+	</head>
+	<body>
+		<h1> Rellena tu CV </h1>
+		<form action="http://192.168.1.65/dam-2015/XHTML/post.php" method="GET" enctype="multipart/form-data">
+		<!-- 
+		 <form action="http://localhost/PHP/post.php" method="POST" enctype="multipart/form-data">
+		 -->
+
+	<!-- form parametros: action, method, enctype, accept -->
+	<!-- form: Si el formulario incluye ficheros hay que poner en el form method="POST" enctype="multipart/form-data" o no se enviará el fichero -->
+
+	<!-- input parametros: type, name, value, size, maxlength, checked, disabled, readonly, src, alt placeholder -->
+	<!-- type= "text, password, checkbox, radio, submit, reset, file, hidden, image, button" -->
+	<!-- name: tiene que ponerse y coincidir con el nombre que espera el servidor -->
+	<!-- disabled: lo deshabilita y no se envia al servidor -->
+	<!-- readonly: lo deshabilita y se envia al servidor -->
+	<!-- type -->
+	<!-- checkbox: los name tienen que coincidir (solo se envia el chequed) -->
+	<!-- radio: Los name tienen que coincidir (solo se envia el checked), se pone un chequed por defecto, Hay que poner valor-->
+	<!-- button: El value aparece en el boton -->
+
+			<fieldset>
+			    <legend>Datos personales: </legend>
+			    <!-- OJO Se emplean [] en los name con un identificador comun para que los datos pasen en un array -->
+				<label for="name"> Nombre </label><br/>
+				<input id="name" type="text"    	name="Datos[nombre]" 		value="" placeholder="Escribe tu nombre" /><br/>
+				<label for="surname"> Apellidos </label><br/>
+				<input id="surname" type="text"    	name="Datos[apellidos]" 	value="" placeholder="Escribe tus apellidos" /><br/>
+				<label for="pass"> Contraseña </label><br/>
+				<input id="pass" type="password"  	name="Datos[contrasena]" 	/><br/>
+				<label for="nie"> DNI/NIE </label><br/>
+				<input id="nie" type="text"    		name="Datos[nie]" 			/><br/>
+				<label for="sex"> Sexo </label><br/>
+				<input id="sexM" type="radio" name="Datos[sexo]" value="H" checked /> 	Hombre <br/>
+				<input id="sexF" type="radio" name="Datos[sexo]" value="M" /> 			Mujer  <br/>
+				<br/>
+				<label for="picture"> Foto </label>
+				<input id="picture" type="file" name="foto" formtarget="_self" /> <br/>
+			</fieldset>
+			<fieldset>
+			    <legend>CV en formato texto: </legend>
+			    <!-- textarea parametros: rows, cols, name, disabled, readonly -->
+				<textarea name="CV" cols="40"	
+					  rows="5"> CV
+				</textarea>
+				
+			</fieldset>
+
+			<fieldset>
+			    <legend>Competencias: </legend>
+					<select id="SO" name="Competencias[]" multiple size="7">
+					<!-- select parametros: size, multiple, name, disabled -->
+					<!-- [] Hace que se envie un array para el Select, cada elemento sería una opción del Select -->
+						<optgroup label="Sistemas operativos">
+						<!-- optgroup parametros: label, disabled, selected -->
+							<option value="Op1"	selected="selected">Linux</option>
+							<!-- option parametros: selected, value, label, disabled -->
+							<option value="Op2"	selected="selected">Windows</option>
+						</optgroup>
+						<optgroup label="Lenguajes de programación">
+						<!-- optgroup parametros: label, disabled, selected -->
+							<option value="Op3"	selected="selected">C++</option>
+							<!-- option parametros: selected, value, label, disabled -->
+							<option value="Op4">Java</option>
+							<option value="Op5">Basic</option>
+						</optgroup>
+					</select>
+			</fieldset>
+
+			<fieldset>
+			    <legend>Otros: </legend>
+			    <input type="checkbox" > Carnet de conducir </input>
+			    <input type="checkbox" > Vehículo propio </input>
+			</fieldset>
+
+			<input type="submit">
+			<input type="reset">
+
+		</form>
+	</body>
+</html>
