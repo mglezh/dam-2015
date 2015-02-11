@@ -1,0 +1,44 @@
+/*Se le pone class="clearfix" a los contenedores que tienen elementos float en su interior*/
+.clearfix:before,	
+.clearfix:after	{
+	/*fuerza a que los elementos clearfix tengan un elemento table al principio y al final */
+	content:	"";
+	display:	table;
+}
+.clearfix:after	{clear:	both;}
+.clearfix		{zoom:	1;}
+
+ul
+{
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+
+.menu > li
+{	
+	border: 1px solid black;
+	padding: 5px 10px;
+	background-color: blue;
+	position:relative;
+	float:left;
+}
+
+.submenu
+{
+	position: absolute;
+	left: 0;
+	top: 100%;
+	border: 1px solid black;
+	width: 150%;
+}
+
+.menu > li:hover .submenu
+{
+	display: block;
+}
+
+.submenu
+{
+	display: none;
+}

@@ -95,10 +95,5 @@ Posicionamiento de la caja
 	absolute- Posicionamiento absoluto respecto a una caja contenedora de posisionamiento relativo
 	fixed- Posicionamiento fijo (no se ve afectado por el scroll)
 	float- Posicionamiento flotante
-
 	clear:	
-
-
-visibility: 
-display:
 */
