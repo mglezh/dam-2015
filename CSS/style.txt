@@ -1,0 +1,113 @@
+﻿/* 	Comentarios en CSS
+
+Importar otros ficheros CSS
+	@import "/css/colores.css";
+	@import url('/css/colores.css');
+
+Definición de una regla de CSS
+	selector{propiedad1:valor1; .... ;propiedadN:valorN}
+
+medios de CSS
+	all, braille, embosed, handled, print, projection, screen, speech, tty, tv
+	
+Declarar reglas para un medio determinado
+	@media 	print  {body{font-size:	10pt}}
+	@media	screen {body{font-size:	13px}}
+	@media  screen, print {body{line-height:1.2}}
+	
+Selectores
+	* - Todos los elementos (tag) del fichero HTML
+	tag1 			- Todos los elementos con etiqueta "tag1"
+	tag1, tag2 		- Todos los elementos con etiqueta "tag1" y "tag2"
+	tag1 tag2 tagN	- Todos los elementos "tagN" que están dentro de un elemento "tag2" que está dentro de un elemento "tag1"
+	.class1			- Los elementos que tienen clase "class1" (un elemento HTML puede tener más de una clase separadas por espacio)
+	#id1			- Los elementos que tienen id "id1"
+
+Unidades absolutas	
+	in cm mm pt pc
+Unidades relativas
+	em ex px %
+
+Color	
+	Selector {color:rgb(255,15,0);}	
+	Selector {color:#FF0F00;}
+	Selector {color:blue;}
+	
+Modelo de cajas (Propiedades) (XX = valor en unidades; YY = valor en unidades)
+	Ancho y alto del contenido de una caja, sin incluir relleno, bordes y margenes
+		width: XX
+		height: XX 
+	margenes 
+		margin: XX_top XX_right XX_botton XX_left 
+		margin-top: XX (solo a elementos de bloque)
+		margin-right: XX 
+		margin-botton: XX(solo a elementos de bloque)
+		margin-left: XX
+			nota: Cuando se juntan dos o más márgenes verticales, se fusionan de forma automática y la altura del nuevo 				margen será igual a la altura del margen más alto de los que se han fusionado.
+			nota: Se emplea "auto" en lugar de un valor para centrar la caja.
+	Relleno
+		padding: 	XX_top XX_right XX_botton XX_left 
+		padding-top: 	XX 
+		padding-right: 	XX 
+		padding-botton: XX 
+		padding-left: 	XX
+	Bordes
+		border: 		XX STYLE(dashed|double|dotted|solid|none) RGB(color)
+		border-top: 		XX STYLE RGB
+		border-right: 		XX STYLE RGB
+		border-bottom: 		XX STYLE RGB
+		border-left: 		XX STYLE RGB
+		border-top-width: 	XX
+		border-right-width: 	XX
+		border-bottom-width: 	XX
+		border-left-width: 	XX
+		border-top-color: 	RGB
+		border-right-color: 	RGB
+		border-bottom-color: 	RGB
+		border-left-color: 	RGB
+		border-top-style: 	STYLE
+		border-right-style: 	STYLE
+		border-bottom-style: 	STYLE
+		border-left-style: 	STYLE
+
+	Fondo del contenido
+		background: 		RGB URL REPEAT ATTACHMENT POSITION;
+		background-color: 	RGB 
+		background-image: 	URL(url("../img/colorstrip.gif"))
+		background-repeat: 		REPEAT (repeat|repeat-x|repeat-y|no-repeat|initial|inherit)
+		background-attachment: 	ATTACHMENT (scroll|fixed|local|initial|inherit)
+		background-position: 	POSITION (XX YY|left top|left center|left bottom|right top|right center|
+										right bottom|center top|center center|center bottom)
+		background-size: 	(auto|XX YY|cover|contain|initial|inherit)
+		background-origin: 	(border-box|padding-box|content-box|initial|inherit) Zona a cubrir con el background
+		background-clip: 	(border-box|padding-box|content-box|initial|inherit) Zona a cubrir con el background
+
+Posicionamiento de la caja
+	position:  	  static	(Posicionamiento normal)
+				| relative	(Posicionamiento relativo, se conserva el espacio de su posición normal)
+				| absolute	(Posicionamiento absoluto respecto al origen de la pantalla 
+							 o al origen de un elemento contenedor que no tenga posicionamiento normal)
+				| sticky
+				| fixed		(Posicionamiento fijo, no se ve afectado por el scroll)
+
+	top:	XX
+	lef:	XX
+	right: 	XX
+	botton:	XX
+
+	float:		  left | right | none	
+	clear:		  none | left | right | both
+
+	visibility:	  visible
+				| hidden 	(El elemento no será visible pero se conserva su espacio)
+				| collapse	(Se usa en tablas para fusionar las celdas)
+				| inherit
+
+	display:	  inline | block | list-item | run-in | compact | marker | table | inline-table | table-row-group 
+				| table-header-group | table-footer-group | table-row | table-column-group | table-column 
+				| table-cell | table-caption 
+				| none (Oculta el elemento sin conservar su espacio)
+				| inherit
+	
+	
+*/
