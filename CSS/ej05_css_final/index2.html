@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 Template</title>
+<!-- viewport: Para hacer diseños responsive  
+	content = " "
+	"width  = ... "
+	"height = ... "
+	"initial-scale = ..."
+	"user-scale = ..."
+	"minimun-scale = ..."
+	"maximun-scale = ..."
+	-->
+    <meta name="viewport" content="width=device-width"/>
+<!-- Formato de codificación de caracteres -->
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+  	<noscript>
+   	</noscript>
+  	<div class="wrapper">
+        <header>
+            <hgroup>
+                <h1>My Weblog</h1>
+                <p>A lot of effort went into making this effortess</p>
+            </hgroup>
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">blog</a></li>
+                <li><a href="#">gallery</a></li>
+                <li><a href="#">about</a></li>
+            </ul>
+        </header>
+        <section class="articulos">
+            <article class="articulo">
+                <h2 class="h2"> <a href="#"> Travel day </a> </h2>
+                <p class="date">October 22, 2011</p>
+                <a href="#">John Doe</a>, <a href="#">3 comments</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </article>
+            <table border = 1  cellspacing=0 cellpadding=2 >
+                <thead>
+                    <tr>
+                        <th>Lorem ipsum</th>
+                        <th>Lorem ipsum</th>
+                        <th>Lorem ipsum</th>
+                        <th>Lorem ipsum</th>
+                        <th>Lorem ipsum</th>
+                        <th>Lorem ipsum</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                    </tr>
+                </tfoot>
+                <tboody>
+                    <tr>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                    </tr>
+                </tboody>
+            </table>
+        </section>
+        <section class="comments">
+            <h2 class="h2"> 3 Comments </h2>
+            <article class="comment clearfix">
+                <div class="fleft avatar">
+                    <img src="img/imagen.jpg" alt="Imagen 2" class="img-responsive">
+                </div>
+                <div class="fleft content"> 
+                    <a href="#"> Stylearua </a> <span>febrero 22, 2013 at 11:34 am </span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                </div>
+            </article>
+            <article class="comment clearfix">
+                <div class="fleft avatar">
+                    <img src="img/imagen.jpg" alt="Imagen 2" class="img-responsive">
+                </div>
+                <div class="fleft content"> 
+                    <a href="#"> Stylearua </a> <span>febrero 22, 2013 at 11:34 am </span>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                </div>
+            </article>
+            <article class="comment clearfix">
+                <div class="fleft avatar">
+                    <img src="img/imagen.jpg" alt="Imagen 2" class="img-responsive">
+                </div>
+                <div class="fleft content"> 
+                <a href="#"> Stylearua </a> <span>febrero 22, 2013 at 11:34 am </span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            </article>
+            <article>
+                <h2 class="h2"> Leave a comment </h2>
+                <form action="#">
+                    <div class="form-row">                    
+                        <label class="form" for="name"> Nombre </label>
+                        <input class="comment" id="name" type="text"        name="Datos[nombre]"        value="" placeholder="Escribe tu nombre" />
+                    </div>
+                    <div class="form-row">                    
+                        <label class="form" for="email"> Correo electrónico </label>
+                        <input class="comment" id="email" type="text"       name="Datos[mail]"  value="" placeholder="Correo electronico"/>
+                    </div>
+                    <div class="form-row">
+                        <label class="form" for="website"> Sitio web </label>
+                        <input class="comment" id="website" type="text"     name="Datos[website]"   value="" placeholder="Sitio web"/>
+                    </div>
+                    <div class="form-row">
+                        <label class="form" for="comment"> Commentario </label>
+                        <!-- textarea parametros: rows, cols, name, disabled, readonly -->
+                        <textarea class="comment" id="comment" name="Datos[Comentario]" cols="40" rows="5" >
+                        </textarea>
+                    </div>
+                    <div class="form-row">
+                         <input class="comment" type="submit" value="POST COMMENT">
+                    </div>
+                </form>
+            </article>
+        </section>
+        <footer>
+            <img class="footer" src="" alt="Imgen de pie de pagina">
+            <p class="footer">2011 <a href="#"> John Doe</a></p>
+        </footer>
+	</div> /*wrapper*/
+  </body>
+</html>
+

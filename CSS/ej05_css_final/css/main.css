@@ -1,0 +1,122 @@
+body{font: 400 12px/1.6em Arial, helvetica, sans-serif;}
+
+.fleft {
+	float: left;
+}
+
+.wrapper{
+	margin: 0 auto;
+	width: 960px;
+}
+
+header{
+	background: black;
+	color: white;
+	padding: 25px 10px;
+	text-align: center;
+}
+
+a,
+a:visited,
+a:link,
+a:active {
+	color: blue;
+	text-decoration: none;
+	border-bottom: 1px dotted blue;
+}
+
+header a,
+header a:visited,
+header a:link,
+header a:active {
+	color: white;
+	border-bottom-color:white;
+}
+header p, 
+header ul, h1{
+	font-size: 1em;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+/* para el navegador */
+header  ul{
+	list-style-type: none;
+	padding: 0;
+}
+
+header ul li
+{
+	display: inline;
+	margin: 1em;
+}
+article{
+	margin: 25px 0;
+	position: relative;
+}
+.date{
+	float: right;
+}
+
+.h2{
+	display: block;
+	color: #00;
+	font-size: 1.1em;
+}
+article .h2 a{
+	color:black;
+	border-bottom-color:black;
+}
+
+article  a{
+	color: blue;
+	border-bottom-color:blue;
+}
+
+.articulos ul{
+	list-style-type: none;
+}
+
+.day{
+	display: inline-block;
+	width: 20px;
+	text-align: right;
+	margin-right: 0.5em;
+}
+
+.comments h2{
+	padding-bottom: 0.2em;
+	border-bottom: 1px dashed silver;
+}
+
+.comment .avatar{
+	width: 15%;
+}
+
+.comment img{
+	width: 100px;
+}
+
+.comment .content{
+	width: 80%;
+	padding-left: 5%;
+}
+
+.form-row label,
+.form-row input,
+.form-row textarea{
+	display: block;
+}
+
+form .comment{
+	width: 40%;
+}
+
+footer{
+	margin-top: 60px;
+	text-align: center;
+}
+
+.footer{
+	display: inline;
+}
+

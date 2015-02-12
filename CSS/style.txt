@@ -28,17 +28,15 @@ Unidades absolutas
 Unidades relativas
 	em ex px %
 
-Color	
-	Selector {color:rgb(255,15,0);}	
-	Selector {color:#FF0F00;}
-	Selector {color:blue;}
-	
-Modelo de cajas (Propiedades) (XX = valor en unidades; YY = valor en unidades)
+Modelo de cajas (Propiedades) 
+				(XX = valor en unidades; YY = valor en unidades)
+				(RGB)
 	Ancho y alto del contenido de una caja, sin incluir relleno, bordes y margenes
 		width: XX
 		height: XX 
 	margenes 
 		margin: XX_top XX_right XX_botton XX_left 
+		margin: XX_top_botton auto
 		margin-top: XX (solo a elementos de bloque)
 		margin-right: XX 
 		margin-botton: XX(solo a elementos de bloque)
@@ -88,7 +86,8 @@ Posicionamiento de la caja
 				| absolute	(Posicionamiento absoluto respecto al origen de la pantalla 
 							 o al origen de un elemento contenedor que no tenga posicionamiento normal)
 				| sticky
-				| fixed		(Posicionamiento fijo, no se ve afectado por el scroll)
+				| fixed		(Posicionamiento fijo  respecto al origen de la pantalla 
+							 o al origen de un elemento contenedor que no tenga posicionamiento normal, no se ve afectado por el scroll)
 
 	top:	XX
 	lef:	XX
@@ -103,11 +102,57 @@ Posicionamiento de la caja
 				| collapse	(Se usa en tablas para fusionar las celdas)
 				| inherit
 
-	display:	  inline | block | list-item | run-in | compact | marker | table | inline-table | table-row-group 
-				| table-header-group | table-footer-group | table-row | table-column-group | table-column 
-				| table-cell | table-caption 
-				| none (Oculta el elemento sin conservar su espacio)
-				| inherit
+	display:	  none (Oculta el elemento sin conservar su espacio)
+				| inline 
+				| block 
+				| list-item 
+				| inline-block 
+				| inline-table | table | table-cell | table-column 
+				| table-column-group | table-footer-group 
+				| table-header-group | table-row | table-row-group 
+				| flex | inline-flex | grid | inline-grid | run-in 
+				| ruby | ruby-base | ruby-text | ruby-base-container 
+				| ruby-text-container | contents
+
+Tipografía
+	color:			RGB (rgb(255,15,0) | #FF0F00 | blue)
+	font-family: 	"Times	New	Roman",	Times,	serif;
+					(Si no encuentra la primera sigue a la segunda y así)
+	font-size: 		XX
+					(Ponerle a body un tamaño base en px y a partir de ahí 
+					definir todos los tamaños de letra en em)
+	font-weight: 	normal | bold | bolder | lighter | inherit
+					100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
+	font-style:		normal | italic | oblique | inherit
 	
-	
+	font: weit XX(size)/XX(align) family
+
+	text-align:		start | end | left | right | center | justify | match-parent | start end
+	line-height:	XX
+					(interlineado)
+	text-decoration:none | underline | overline | line-through | blink | inherit
+	text-transform:	capitalize | uppercase | lowercase | none | inherit
+	vertical-align: baseline | sub | super | text-top | text-bottom 
+					| middle | top | bottom | <percentage> | <length>
+					(Alineación vertical,solo para tablas)
+	text-indent: 	XX (margen inicial)
+	letter-spacing: XX (espaciamiento de letras)
+	word-spacing: 	XX (espaciamiento de palabras)
+
+Enlaces
+
+PSEUDO-CLASES
+
+Listas
+	list-style-type: disc | circle | square | decimal | decimal-leading-zero | lower-roman | upper-roman | lower-greek | lower-latin | upper-latin | armenian | georgian | lower-alpha | upper-alpha | none | inherit
+					(Cambiar la viñeta)
+	list-style-position: inside | outside | inherit
+					(Cambiar la posición de la viñeta)
+	list-style-image: url | none | inherit
+
+Formularios
+	(Agrupar label e input dentro de un div)
+	(Hacer todos los label inline-block para poder manipular si ancho)
+
+
 */

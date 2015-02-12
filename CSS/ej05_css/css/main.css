@@ -1,0 +1,16 @@
+/*Se le pone class="clearfix" a los contenedores que tienen elementos float en su interior*/
+.clearfix:before,	
+.clearfix:after	{
+	/*fuerza a que los elementos clearfix tengan un elemento table al principio y al final */
+	content:	"";
+	display:	table;
+}
+.clearfix:after	{clear:	both;}
+.clearfix		{zoom:	1;}
+
+/* para el navegador */
+nav ul li
+{
+	float: left;
+}
+
