@@ -22,34 +22,41 @@
   <body>
   	<noscript>
    	</noscript>
-	<header>
-		<hgroup>
-		</hgroup>
-	</header>
-	<!--  -->
-	<nav class="clearfix">
-		<!-- -->
-		<ul>
-		    <li><a href="#">home</a></li>
-		    <li><a href="#">blog</a></li>
-		    <li><a href="#">gallery</a></li>
-		    <li><a href="#">about</a></li>
-		</ul>
+  	<section class="wrapper">
+		<header class="header">
+			<!-- 
+			<hgroup>
+			</hgroup>
+			-->
+		</header>
 		<!--  -->
-	</nav>
-	<!--  -->
-	<section class="articles">
-		<article>
-		</article>
- 	</section>
- 	<!--  -->
- 	<aside>
- 	</aside>
- 	<!--  -->
- 	<!--  -->
-	<footer>
-	</footer>
-	<!--  -->
+		<nav class="nav">
+			<!-- nav example
+			ul>(li>a[href=#]{link$})*4
+			-->
+		</nav>
+		<!--  -->
+		<section class="main">
+			<!-- Table example
+			table.table>thead>tr>th+th{c-header$}*4^^tfoot>tr>td+td{f-element$}*4^^tbody>tr*7>th{r-header$}+td{c-element$}*4
+			-->
+		 	<!-- List example
+			ul.menu>li#item$.item{menuitem$}*5>ul.sumenu>li#submenu$.submenuitem{submenuitem$}*5
+			-->
+		 	<!--
+				<article>
+				</article>
+		  	--> 	
+		</section>
+		<!--
+	 	<aside>
+	 	</aside>
+	 	-->
+	 	<!--
+		<footer>
+		</footer>
+		-->
+	</section> <!-- wrapper -->
   </body>
 </html>
 

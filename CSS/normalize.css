@@ -1,19 +1,34 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
-/*Se le pone class="clearfix" a los contenedores que tienen elementos float en su interior*/
+/**
+ * MGH: Se le pone clase "clearfix" a los contenedores que tienen elementos float en su interior
+ * 1. Fuerza a que los elementos de clase "clearfix" tengan un elemento "table" al principio y al final
+ * 2. Le hace un "clear:both" al elemento table final
+ * 3. Minimiza los elementos "table" agregados
+ */
 .clearfix:before, 
 .clearfix:after {
-  /*fuerza a que los elementos clearfix tengan un elemento table al principio y al final */
+ /**
+  *MGH: Fuerza a que los elementos de clase "clearfix" tengan un elemento table al principio y al final 
+  */
   content:  "";
   display:  table;
 }
 .clearfix:after {clear: both;}
 .clearfix   {zoom:  1;}
 
+/**
+ * MGH: Class ensures that images do not exceed the size of its container
+ * Por otra parte se les asigna a los elementos "img-responsive" un "width" que limite su crecimiento a valor
+ * en "px" que no afecte a calidad de la imagen
+ */
 .img-responsive{
   max-width: 100%;
 }
 
+/**
+ * MGH: Corrects the "width". Before the width included only content, now includes content, padding, border and margin
+  */
 * {
   box-sizing: border-box;
 }
