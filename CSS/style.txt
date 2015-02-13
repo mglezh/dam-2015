@@ -16,12 +16,55 @@ Declarar reglas para un medio determinado
 	@media  screen, print {body{line-height:1.2}}
 	
 Selectores
-	* - Todos los elementos (tag) del fichero HTML
-	tag1 			- Todos los elementos con etiqueta "tag1"
-	tag1, tag2 		- Todos los elementos con etiqueta "tag1" y "tag2"
-	tag1 tag2 tagN	- Todos los elementos "tagN" que están dentro de un elemento "tag2" que está dentro de un elemento "tag1"
-	.class1			- Los elementos que tienen clase "class1" (un elemento HTML puede tener más de una clase separadas por espacio)
-	#id1			- Los elementos que tienen id "id1"
+	Nota: "Element" puede estar definido por la "tag" del elemento, la "class", el "id", etc
+	Nota: "Type" solo incluye la "tag" del elemento
+	* - Todos los elementos del fichero HTML
+	Element 			- Todos los elementos Element1
+	Element1, Element2 	- Todos los elementos Element1 y Element2
+	Element1  Element2	- Todos los elementos Element2 que están dentro de un elemento Element1 que está 
+							dentro de un elemento "tag1"
+	.class1				- Los elementos que tienen clase "class1" (un elemento HTML puede tener más de una clase separadas por espacio)
+	#id1				- Los elementos que tienen id "id1"
+
+	>	hijo
+	+	adyacente
+	~	hermano
+
+	[atributo]				(los elementos que tienen atributo)
+	[atributo=valor]		(los elementos que tienen atributo = valor)
+	[atributo~=valor]		(los elementos que tienen atributo = )
+	[atributo|=valor]		(los elementos que tienen atributo = )
+	[atributo^="valor"]		(los elementos que tienen atributo que comienza exactamente por la cadena de texto indicada. )
+	[atributo$="valor"]		(los elementos que tienen atributo que termina exactamente por la cadena de texto indicada)
+	[atributo*="valor"]		(los elementos que tienen atributo que contiene la cadena de texto indicada )
+
+	::first-line   	- Selecciona la primera línea del texto de un elemento.
+	::first-letter 	- Selecciona la primera letra del texto de un elemento.
+	::before		- Selecciona la parte anterior al contenido de un elemento para insertar nuevo contenido generado.
+	::after			- Selecciona la parte posterior al contenido de un elemento para insertar nuevo contenido generado.
+	::selection		- Selecciona el texto que ha seleccionado un usuario con su ratón o teclado.
+
+	Element:empty 			- Elementos sin contenidoS
+		:first-child		- Selecciona todos los elementos que sean primer hijo de su padre
+	Element:first-child, selecciona el elemento "Element" que sea primer hijo de su padre
+		:last-child, selecciona todos los elementos que sean ultimo hijo de su padre
+	Element:last-child, selecciona el elemento "Element" que sea ultimo hijo de su padre
+		:nth-child(Number) - Selecciona todos los elementos que sean hijo "Number" de su padre
+		:nth-last-child(Number), igual, pero contando alrevés
+	Element:nth-child(Number), selecciona el elemento "Element" que sea hijo "Number" de su padre
+	Element:nth-last-child(Number), igual, pero contando alrevés
+
+	Type:first-of-type - Selecciona al primer elemento de tipo "Type"
+	Type:nth-of-type(an + b), selecciona el elemento indicado pero con la condición de que sea el 
+								enésimo elemento hermano de ese tipo.
+	Type:nth-last-of-type(numero), idéntico al anterior pero el número indicado se empieza a contar
+										desde el último hijo.
+
+	Nota: Number puede ser de tipo  (an + b)
+		/* selecciona todos los elementos impares de una lista */
+		li:nth-child(2n+1) { ... }
+		/* selecciona todos los elementos pares de una lista */
+		li:nth-child(2n)   { ... }
 
 Unidades absolutas	
 	in cm mm pt pc
@@ -71,14 +114,24 @@ Modelo de cajas (Propiedades)
 	Fondo del contenido
 		background: 		RGB URL REPEAT ATTACHMENT POSITION;
 		background-color: 	RGB 
-		background-image: 	URL(url("../img/colorstrip.gif"))
-		background-repeat: 		REPEAT (repeat|repeat-x|repeat-y|no-repeat|initial|inherit)
-		background-attachment: 	ATTACHMENT (scroll|fixed|local|initial|inherit)
-		background-position: 	POSITION (XX YY|left top|left center|left bottom|right top|right center|
+		background-image: 	URL_1(url("../img/colorstrip.gif")), URL_2,.... URL_N
+		background-position: POS_1, POS_1,..POS_N
+							<POS> (XX YY|left top|left center|left bottom|right top|right center|
 										right bottom|center top|center center|center bottom)
-		background-size: 	(auto|XX YY|cover|contain|initial|inherit)
+		background-size:	BG-SIZE_1, BG-SIZE_2,... BG-SIZE_N
+							<BG-SIZE> = [ <length> | <percentage> | auto ]{1,2} | cover | contain
+
+
+		background-repeat: 		REPEAT (repeat|repeat-x|repeat-y|no-repeat|initial|inherit)
+		background-attachment: 	ATTACHMENT (scroll|fixed|local|initial|inherit)		background-size: 	(auto|XX YY|cover|contain|initial|inherit)
 		background-origin: 	(border-box|padding-box|content-box|initial|inherit) Zona a cubrir con el background
 		background-clip: 	(border-box|padding-box|content-box|initial|inherit) Zona a cubrir con el background
+
+	ALTURAS/ANCHURAS MÁXIMAS Y MÍNIMAS	
+		max-width:
+		min-width:
+		max-height:
+		min-height:
 
 Posicionamiento de la caja
 	position:  	  static	(Posicionamiento normal)
@@ -103,10 +156,10 @@ Posicionamiento de la caja
 				| inherit
 
 	display:	  none (Oculta el elemento sin conservar su espacio)
-				| inline 
-				| block 
+				| inline *
+				| block *
 				| list-item 
-				| inline-block 
+				| inline-block *
 				| inline-table | table | table-cell | table-column 
 				| table-column-group | table-footer-group 
 				| table-header-group | table-row | table-row-group 
@@ -114,8 +167,18 @@ Posicionamiento de la caja
 				| ruby | ruby-base | ruby-text | ruby-base-container 
 				| ruby-text-container | contents
 
+	box-sizing: content-box | padding-box | border-box *
+				(Sellecciona a quien se le aplica el width (content/padding/border *))
+
+Overflow
+	overflow:   visible | hidden | scroll | auto | inherit
+	overflow-x: visible | hidden | scroll | auto | inherit 
+	overflow-y: visible | hidden | scroll | auto | inherit
+
+
 Tipografía
-	color:			RGB (rgb(255,15,0) | #FF0F00 | blue)
+	color:			RGB (rgb(255,15,0) | rgba(#HH,#HH,#HH,Opacidad (0.0-1))  | #FF0F00 | blue	)
+	opacity:		0.0-1 (Opacidad)
 	font-family: 	"Times	New	Roman",	Times,	serif;
 					(Si no encuentra la primera sigue a la segunda y así)
 	font-size: 		XX
@@ -140,19 +203,60 @@ Tipografía
 	word-spacing: 	XX (espaciamiento de palabras)
 
 Enlaces
+	color: ...
+	font-weight: ...
+	text-decoration: ...
+	border-bottom: ...
+	background-image: ...
 
-PSEUDO-CLASES
+Pseudo clases	:link :visited :hover :active
+				:hover :active :focus
 
 Listas
-	list-style-type: disc | circle | square | decimal | decimal-leading-zero | lower-roman | upper-roman | lower-greek | lower-latin | upper-latin | armenian | georgian | lower-alpha | upper-alpha | none | inherit
+	list-style-type: disc | circle | square | decimal | decimal-leading-zero | lower-roman 
+					| upper-roman | lower-greek | lower-latin | upper-latin | armenian 
+					| georgian | lower-alpha | upper-alpha | none | inherit
 					(Cambiar la viñeta)
 	list-style-position: inside | outside | inherit
 					(Cambiar la posición de la viñeta)
 	list-style-image: url | none | inherit
+					(Poner imagen por viñeta)
 
 Formularios
 	(Agrupar label e input dentro de un div)
-	(Hacer todos los label inline-block para poder manipular si ancho)
+	(Hacer todos los "label" e "input" inline-block para poder manipular si ancho)
 
+Tablas
+	border-collapse: collapse | separate | inherit
+	border-spacing: XX (Solo tiene sentido para bordes separados)
+	border: ..... (Hay que darle borde a la tabla y a la celda por separado)
+
+	empty-cells: show | hide | inherit (mostrar/ocultar las celdas vacias)
+
+	caption-side: top | bottom | inherit (Posicion del caption de la tabla)
+
+Bordes
+	border-radius
+	border-top-left-radius 
+	border-top-right-radius 
+	border-bottom-right-radius 
+	border-bottom-left-radius
+	
+		[ <length> | <percentage> ]{1,4} [ / [ <length> | <percentage> ]{1,4} ]
+
+		border-radius: 5px 10px 5px 10px / 10px 5px 10px 5px;
+		border-radis: 50%;
+
+Sombras
+	box-shadow
+		inset (hacia dentro) XX(desplazamiento a la derecha) YY(desplazamiento hacia abajo) XX (Desenfoque) XX (propagacion) RGB
+
+		box-shadow: 10px 10px;
+		box-shadow: 10px 10px 5px #888;
+		box-shadow: inset 2px 2px 2px 2px black;
+		box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
+
+
+Cursor
 
 */
