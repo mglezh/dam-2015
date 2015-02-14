@@ -1,4 +1,4 @@
-﻿/* 	Comentarios en CSS
+﻿/* 	Comentarios en CSS */
 
 Importar otros ficheros CSS
 	@import "/css/colores.css";
@@ -16,51 +16,50 @@ Declarar reglas para un medio determinado
 	@media  screen, print {body{line-height:1.2}}
 	
 Selectores
-	Nota: "Element" puede estar definido por la "tag" del elemento, la "class", el "id", etc
-	Nota: "Type" solo incluye la "tag" del elemento
-	* - Todos los elementos del fichero HTML
-	Element 			- Todos los elementos Element1
-	Element1, Element2 	- Todos los elementos Element1 y Element2
-	Element1  Element2	- Todos los elementos Element2 que están dentro de un elemento Element1 que está 
-							dentro de un elemento "tag1"
-	.class1				- Los elementos que tienen clase "class1" (un elemento HTML puede tener más de una clase separadas por espacio)
-	#id1				- Los elementos que tienen id "id1"
+	Nota: 	"Element" Incluye la etiqueta (tag) del elemento, la  clase (class), el identificador (id), etc
+			"Type"    Incluye la etiqueta (tag) de un elemento solamente
+	* 						- Todos los elementos del fichero HTML
+	Element 				- Todos los elementos "Element"
+	Element1, Element2 		- Todos los elementos "Element1" y "Element2"
+	Element1  Element2		- Todos los elementos "Element2" que están dentro de un elemento "Element1"
 
-	>	hijo
-	+	adyacente
-	~	hermano
+			.class 			- Todos los elementos que tienen clase "class"
+	Element.class			- Los elementos "Element" que tienen clase "class"
+			#identifier		- Todos los elementos que tienen identificador "identifier"
+	Element#identifier		- Los elementos "Element" que tienen identificador "identifier"
+	Element1>Element2		- Los elementos "Element2" que sean hijos de "Element1" (a cualquier nivel)
+	Element1+Element2 		- Los elementos "Element2" que esten a continuación de un elemento "Element1" (en un mismo nivel)
+	Element1~Element2		- Los elementos "Element2" que esten al mismo nivel que un elemento "Element1"
 
-	[atributo]				(los elementos que tienen atributo)
-	[atributo=valor]		(los elementos que tienen atributo = valor)
-	[atributo~=valor]		(los elementos que tienen atributo = )
-	[atributo|=valor]		(los elementos que tienen atributo = )
-	[atributo^="valor"]		(los elementos que tienen atributo que comienza exactamente por la cadena de texto indicada. )
-	[atributo$="valor"]		(los elementos que tienen atributo que termina exactamente por la cadena de texto indicada)
-	[atributo*="valor"]		(los elementos que tienen atributo que contiene la cadena de texto indicada )
+	[attribute]				-los elementos que tienen atributo "attribute"		
+	[attribute ="value"]	-los elementos que tienen atributo "attribute" con valor igual "value")
+	[attribute~="value"]	-los elementos que tienen atributo "attribute" y al menos uno de sus valores es igual a "value" 		
+	[attribute^="value"]	-los elementos que tienen atributo "attribute" cuyo valor comienza exactamente por la cadena "value" 		
+	[attribute$="value"]	-los elementos que tienen atributo "attribute" cuyo valor termina exactamente por la cadena "value"		
+	[attribute*="value"]	-los elementos que tienen atributo "attribute" cuyo valor contiene la cadena de texto "value" 		
 
-	::first-line   	- Selecciona la primera línea del texto de un elemento.
-	::first-letter 	- Selecciona la primera letra del texto de un elemento.
-	::before		- Selecciona la parte anterior al contenido de un elemento para insertar nuevo contenido generado.
-	::after			- Selecciona la parte posterior al contenido de un elemento para insertar nuevo contenido generado.
-	::selection		- Selecciona el texto que ha seleccionado un usuario con su ratón o teclado.
+	::first-line   			- Selecciona la primera línea del texto de un elemento.
+	::first-letter 			- Selecciona la primera letra del texto de un elemento.
+	::before				- Selecciona la parte anterior al contenido de un elemento para insertar nuevo contenido generado.
+	::after					- Selecciona la parte posterior al contenido de un elemento para insertar nuevo contenido generado.
+	::selection				- Selecciona el texto que ha seleccionado un usuario con su ratón o teclado.
 
-	Element:empty 			- Elementos sin contenidoS
-		:first-child		- Selecciona todos los elementos que sean primer hijo de su padre
-	Element:first-child, selecciona el elemento "Element" que sea primer hijo de su padre
-		:last-child, selecciona todos los elementos que sean ultimo hijo de su padre
-	Element:last-child, selecciona el elemento "Element" que sea ultimo hijo de su padre
-		:nth-child(Number) - Selecciona todos los elementos que sean hijo "Number" de su padre
-		:nth-last-child(Number), igual, pero contando alrevés
-	Element:nth-child(Number), selecciona el elemento "Element" que sea hijo "Number" de su padre
-	Element:nth-last-child(Number), igual, pero contando alrevés
+	Element:empty 					- Elementos "Element" sin contenido
+			:first-child			- Selecciona todos los elementos que sean primer hijo de su padre
+	Element:first-child				- Selecciona el elemento "Element" que sea primer hijo de su padre
+			:last-child 			- Selecciona todos los elementos que sean ultimo hijo de su padre
+	Element:last-child 				- Selecciona el elemento "Element" que sea ultimo hijo de su padre
+			:nth-child(Number) 		- Selecciona todos los elementos que sean hijo "Number" de su padre
+			:nth-last-child(Number) - Igual, pero contando alrevés
+	Element:nth-child(Number) 		- Selecciona el elemento "Element" que sea hijo "Number" de su padre
+	Element:nth-last-child(Number) 	- Igual, pero contando alrevés
 
-	Type:first-of-type - Selecciona al primer elemento de tipo "Type"
-	Type:nth-of-type(an + b), selecciona el elemento indicado pero con la condición de que sea el 
-								enésimo elemento hermano de ese tipo.
-	Type:nth-last-of-type(numero), idéntico al anterior pero el número indicado se empieza a contar
-										desde el último hijo.
+	Type:first-of-type 				- Selecciona al primer elemento de tipo "Type"
+	Type:nth-of-type(Number)		- Selecciona el elemento de tipo "Type" que sea el elemento "Number" de ese tipo en un mismo
+									nivel
+	Type:nth-last-of-type(Number)	- Igual, pero contando alrevés
 
-	Nota: Number puede ser de tipo  (an + b)
+	Nota: "Number" puede ser de tipo  (an + b)
 		/* selecciona todos los elementos impares de una lista */
 		li:nth-child(2n+1) { ... }
 		/* selecciona todos los elementos pares de una lista */
@@ -87,60 +86,72 @@ Modelo de cajas (Propiedades)
 			nota: Cuando se juntan dos o más márgenes verticales, se fusionan de forma automática y la altura del nuevo 				margen será igual a la altura del margen más alto de los que se han fusionado.
 			nota: Se emplea "auto" en lugar de un valor para centrar la caja.
 	Relleno
-		padding: 	XX_top XX_right XX_botton XX_left 
+		padding: 		XX | auto | inherit
+		padding: 		XX_top_right_botton_left 
+		padding: 		XX_top_botton XX_right_left 
+		padding: 		XX_top XX_right XX_botton XX_left 
 		padding-top: 	XX 
 		padding-right: 	XX 
 		padding-botton: XX 
 		padding-left: 	XX
-	Bordes
-		border: 		XX STYLE(dashed|double|dotted|solid|none) RGB(color)
-		border-top: 		XX STYLE RGB
-		border-right: 		XX STYLE RGB
-		border-bottom: 		XX STYLE RGB
-		border-left: 		XX STYLE RGB
-		border-top-width: 	XX
+	Borde
+		Nota: 	- STYLE = dashed|double|dotted|solid|none
+		border: 		XX STYLE RGB 	
+		border-top: 	XX STYLE RGB
+		border-right: 	XX STYLE RGB
+		border-bottom: 	XX STYLE RGB
+		border-left: 	XX STYLE RGB
+		border-top-width: 		XX
 		border-right-width: 	XX
 		border-bottom-width: 	XX
-		border-left-width: 	XX
-		border-top-color: 	RGB
+		border-left-width: 		XX
+		border-top-color: 		RGB
 		border-right-color: 	RGB
 		border-bottom-color: 	RGB
-		border-left-color: 	RGB
-		border-top-style: 	STYLE
+		border-left-color: 		RGB
+		border-top-style: 		STYLE
 		border-right-style: 	STYLE
 		border-bottom-style: 	STYLE
-		border-left-style: 	STYLE
+		border-left-style: 		STYLE
+	Borde (CSS3)
+		border-radius: 				[ <length> | <%> ]{1,4} [ / [ <length> | <%> ]{1,4} ] inherit
+		border-top-left-radius: 		top[ <length> | <%> ]  left[ <length> | <%> ] | inherit
+		border-top-right-radius:		top[ <length> | <%> ] right[ <length> | <%> ] | inherit
+		border-bottom-right-radius:  bottom[ <length> | <%> ] right[ <length> | <%> ] | inherit
+		border-bottom-left-radius:   bottom[ <length> | <%> ]  left[ <length> | <%> ] | inherit
+		Ejemplos
+			border-radius: 5px 10px 5px 10px / 10px 5px 10px 5px;	
+			border-radius: 50%;										- Círculo
+	Fondo
+		Nota: 	IMG = none | url("../.../*.*") | inherit
+				POS = XX YY|left top|left center|left bottom|right top|right center
+					|right bottom|center top|center center|center bottom
+				SIZE 		= [ <length> | <percentage> | auto ]{1,2} | cover | contain
+				REPEAT 		= repeat|repeat-x|repeat-y|no-repeat|initial|inherit
+				ATTACHMENT 	= scroll|fixed|local|initial|inherit	
 
-	Fondo del contenido
-		background: 		RGB URL REPEAT ATTACHMENT POSITION;
-		background-color: 	RGB 
-		background-image: 	URL_1(url("../img/colorstrip.gif")), URL_2,.... URL_N
-		background-position: POS_1, POS_1,..POS_N
-							<POS> (XX YY|left top|left center|left bottom|right top|right center|
-										right bottom|center top|center center|center bottom)
-		background-size:	BG-SIZE_1, BG-SIZE_2,... BG-SIZE_N
-							<BG-SIZE> = [ <length> | <percentage> | auto ]{1,2} | cover | contain
+		background: 			(RGB || IMG || REPEAT || ATTACHMENT || POS) | inherit
+		background:				(IMG || POS [SIZE]? || REPEAT || ATTACHMENT || <box> || <box>)_1 ,.... 
+								(IMG || POS [SIZE]? || REPEAT || ATTACHMENT || <box> || <box>)_N || RGB | inherit
+		background-color: 		RGB 
+		background-image: 		IMG_1,.... IMG_N
+		background-position: 	POS_1,.. POS_N
+		background-size:		SIZE_1,... SIZE_N
+		background-repeat: 		REPEAT_1,... REPEAT_N
+		background-attachment: 	ATTACHMENT_1,... ATTACHMENT_N
+		background-size: 		SIZE_1,... SIZE_N
+		background-origin: 		border-box|padding-box|content-box|initial|inherit - Zona a cubrir con el background
+		background-clip: 		border-box|padding-box|content-box|initial|inherit - Zona a cubrir con el background
 
-
-		background-repeat: 		REPEAT (repeat|repeat-x|repeat-y|no-repeat|initial|inherit)
-		background-attachment: 	ATTACHMENT (scroll|fixed|local|initial|inherit)		background-size: 	(auto|XX YY|cover|contain|initial|inherit)
-		background-origin: 	(border-box|padding-box|content-box|initial|inherit) Zona a cubrir con el background
-		background-clip: 	(border-box|padding-box|content-box|initial|inherit) Zona a cubrir con el background
-
-	ALTURAS/ANCHURAS MÁXIMAS Y MÍNIMAS	
-		max-width:
-		min-width:
-		max-height:
-		min-height:
 
 Posicionamiento de la caja
-	position:  	  static	(Posicionamiento normal)
-				| relative	(Posicionamiento relativo, se conserva el espacio de su posición normal)
-				| absolute	(Posicionamiento absoluto respecto al origen de la pantalla 
-							 o al origen de un elemento contenedor que no tenga posicionamiento normal)
-				| sticky
-				| fixed		(Posicionamiento fijo  respecto al origen de la pantalla 
-							 o al origen de un elemento contenedor que no tenga posicionamiento normal, no se ve afectado por el scroll)
+	position:  	  static	- Posicionamiento normal
+				| relative	- Posicionamiento relativo, se conserva el espacio de su posición normal
+				| absolute	- Posicionamiento absoluto respecto al origen de la pantalla 
+							 o al origen de un elemento contenedor que no tenga posicionamiento normal
+				| sticky	- 
+				| fixed		- Posicionamiento fijo  respecto al origen de la pantalla 
+							 o al origen de un elemento contenedor que no tenga posicionamiento normal, no se ve afectado por el scroll
 
 	top:	XX
 	lef:	XX
@@ -151,11 +162,11 @@ Posicionamiento de la caja
 	clear:		  none | left | right | both
 
 	visibility:	  visible
-				| hidden 	(El elemento no será visible pero se conserva su espacio)
-				| collapse	(Se usa en tablas para fusionar las celdas)
+				| hidden 	- Oculta el elemento pero se conserva su espacio
+				| collapse	- Se usa en tablas para fusionar las celdas
 				| inherit
 
-	display:	  none (Oculta el elemento sin conservar su espacio)
+	display:	  none 		- Oculta el elemento sin conservar su espacio
 				| inline *
 				| block *
 				| list-item 
@@ -167,8 +178,6 @@ Posicionamiento de la caja
 				| ruby | ruby-base | ruby-text | ruby-base-container 
 				| ruby-text-container | contents
 
-	box-sizing: content-box | padding-box | border-box *
-				(Sellecciona a quien se le aplica el width (content/padding/border *))
 
 Overflow
 	overflow:   visible | hidden | scroll | auto | inherit
@@ -177,32 +186,30 @@ Overflow
 
 
 Tipografía
-	color:			RGB (rgb(255,15,0) | rgba(#HH,#HH,#HH,Opacidad (0.0-1))  | #FF0F00 | blue	)
-	opacity:		0.0-1 (Opacidad)
+	color:			RGB
+	opacity:		0.0-1 - Opacidad
 	font-family: 	"Times	New	Roman",	Times,	serif;
-					(Si no encuentra la primera sigue a la segunda y así)
-	font-size: 		XX
-					(Ponerle a body un tamaño base en px y a partir de ahí 
-					definir todos los tamaños de letra en em)
+							- Si no encuentra la primera sigue a la segunda y así
+	font-size: 		XX 		- Ponerle a body un tamaño base en px y a partir de ahí 
+							definir todos los tamaños de letra en em
 	font-weight: 	normal | bold | bolder | lighter | inherit
 					100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
 	font-style:		normal | italic | oblique | inherit
 	
-	font: weit XX(size)/XX(align) family
+	font: 			weight XX_size/XX_align family
 
 	text-align:		start | end | left | right | center | justify | match-parent | start end
-	line-height:	XX
-					(interlineado)
+	line-height:	XX 		- interlineado
 	text-decoration:none | underline | overline | line-through | blink | inherit
 	text-transform:	capitalize | uppercase | lowercase | none | inherit
 	vertical-align: baseline | sub | super | text-top | text-bottom 
 					| middle | top | bottom | <percentage> | <length>
-					(Alineación vertical,solo para tablas)
-	text-indent: 	XX (margen inicial)
-	letter-spacing: XX (espaciamiento de letras)
-	word-spacing: 	XX (espaciamiento de palabras)
+							- Alineación vertical,solo para tablas
+	text-indent: 	XX 		- margen inicial
+	letter-spacing: XX 		- espaciamiento de letras
+	word-spacing: 	XX 		- espaciamiento de palabras
 
-Enlaces
+Enlaces - Tipografía que se emplea
 	color: ...
 	font-weight: ...
 	text-decoration: ...
@@ -216,47 +223,35 @@ Listas
 	list-style-type: disc | circle | square | decimal | decimal-leading-zero | lower-roman 
 					| upper-roman | lower-greek | lower-latin | upper-latin | armenian 
 					| georgian | lower-alpha | upper-alpha | none | inherit
-					(Cambiar la viñeta)
+					- Cambiar la viñeta
 	list-style-position: inside | outside | inherit
-					(Cambiar la posición de la viñeta)
+					- Cambiar la posición de la viñeta
 	list-style-image: url | none | inherit
-					(Poner imagen por viñeta)
+					- Poner imagen por viñeta
 
 Formularios
-	(Agrupar label e input dentro de un div)
-	(Hacer todos los "label" e "input" inline-block para poder manipular si ancho)
+	- Agrupar label e input dentro de un div
+	- Hacer todos los "label" e "input" inline-block para poder manipular su ancho
 
 Tablas
-	border-collapse: collapse | separate | inherit
-	border-spacing: XX (Solo tiene sentido para bordes separados)
-	border: ..... (Hay que darle borde a la tabla y a la celda por separado)
-
-	empty-cells: show | hide | inherit (mostrar/ocultar las celdas vacias)
-
-	caption-side: top | bottom | inherit (Posicion del caption de la tabla)
-
-Bordes
-	border-radius
-	border-top-left-radius 
-	border-top-right-radius 
-	border-bottom-right-radius 
-	border-bottom-left-radius
-	
-		[ <length> | <percentage> ]{1,4} [ / [ <length> | <percentage> ]{1,4} ]
-
-		border-radius: 5px 10px 5px 10px / 10px 5px 10px 5px;
-		border-radis: 50%;
+	border-collapse: 	collapse | separate | inherit
+	border-spacing: 	XX 					- Solo tiene sentido para bordes separados
+	border: ..... 							- Hay que darle borde a la tabla y a la celda por separado
+	empty-cells: show | hide | inherit 		- Mostrar/ocultar las celdas vacias
+	caption-side: top | bottom | inherit 	- Posicion del caption de la tabla
 
 Sombras
-	box-shadow
-		inset (hacia dentro) XX(desplazamiento a la derecha) YY(desplazamiento hacia abajo) XX (Desenfoque) XX (propagacion) RGB
+	Nota: 	inset  = Sombra hacia dentro
+			length = XX(desplazamiento a la derecha) YY(desplazamiento hacia abajo) [ XX (Desenfoque) XX (propagacion) ]?
+			SHADOW = inset? && [ length && RGB? ]
+	box-shadow: none | SHADOW_1,... SHADOW_N
 
+	Ejemplos
 		box-shadow: 10px 10px;
 		box-shadow: 10px 10px 5px #888;
 		box-shadow: inset 2px 2px 2px 2px black;
 		box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
 
 
-Cursor
+Cursor ¿?
 
-*/
