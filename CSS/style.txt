@@ -65,26 +65,47 @@ Selectores
 		/* selecciona todos los elementos pares de una lista */
 		li:nth-child(2n)   { ... }
 
-Unidades absolutas	
-	in cm mm pt pc
-Unidades relativas
-	em ex px %
+Unidades
+	Unidades absolutas	
+		in cm mm pt pc
+	Unidades relativas
+		em ex px %
+Colores
+	aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, orange, purple, red, silver, teal, white, yellow
+	#hhh 			- h hexagecimales  (0-F). 	Cada h define la intensidad de un color
+	#hhhhhh 		- hh hexagecimales (00-FF).	Cada hh define la intensidad de un color
+	rgb(d,d,d)		- d decimales (0-255)
+	rgb(%,%,%)
+	rgba(d,d,d,Opacidad (0-1))
+	rgba(%,%,%,Opacidad (0-1))
 
-Modelo de cajas (Propiedades) 
-				(XX = valor en unidades; YY = valor en unidades)
-				(RGB)
-	Ancho y alto del contenido de una caja, sin incluir relleno, bordes y margenes
-		width: XX
-		height: XX 
-	margenes 
-		margin: XX_top XX_right XX_botton XX_left 
-		margin: XX_top_botton auto
-		margin-top: XX (solo a elementos de bloque)
-		margin-right: XX 
-		margin-botton: XX(solo a elementos de bloque)
-		margin-left: XX
-			nota: Cuando se juntan dos o más márgenes verticales, se fusionan de forma automática y la altura del nuevo 				margen será igual a la altura del margen más alto de los que se han fusionado.
-			nota: Se emplea "auto" en lugar de un valor para centrar la caja.
+Modelo de cajas 
+	Nota:	XX  = Unidades 
+			YY 	= Unidades
+			RGB = Colores
+
+	Ancho y alto de una caja
+		width: 	XX
+		height: XX
+		box-sizing: content-box | padding-box | border-box *
+				- Selecciona a quien se le aplica el width (content/padding/border *))
+	Alturas/Anchuras máximas y mínimas
+		max-height: XX
+		min-height: XX
+		max-width: 	XX
+		min-width: 	XX
+	Margen 
+		Nota: 	- Cuando se juntan dos o más márgenes verticales, se fusionan de forma automática y la altura del nuevo 
+				margen será igual a la altura del margen más alto de los que se han fusionado.
+		margin: 		XX | auto | inherit
+		margin: 		XX_top_botton_right_left
+		margin: 		XX_top_botton XX_right_left
+		margin: 		XX_top XX_right XX_botton XX_left
+		margin: 		XX_top_botton auto 	- Centra la caja (horizontalmente) en la caja contenedora
+		margin-top: 	XX 					- Solo a elementos de bloque
+		margin-right: 	XX 
+		margin-botton: 	XX 					- Solo a elementos de bloque
+		margin-left: 	XX
 	Relleno
 		padding: 		XX | auto | inherit
 		padding: 		XX_top_right_botton_left 
@@ -223,9 +244,9 @@ Listas
 	list-style-type: disc | circle | square | decimal | decimal-leading-zero | lower-roman 
 					| upper-roman | lower-greek | lower-latin | upper-latin | armenian 
 					| georgian | lower-alpha | upper-alpha | none | inherit
-					- Cambiar la viñeta
+					- Cambia la viñeta
 	list-style-position: inside | outside | inherit
-					- Cambiar la posición de la viñeta
+					- Cambia la posición de la viñeta
 	list-style-image: url | none | inherit
 					- Poner imagen por viñeta
 
