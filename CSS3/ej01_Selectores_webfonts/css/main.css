@@ -1,6 +1,11 @@
 /* first-child, first-of-type, nth-of-type, nth-last-of-type, last-of-type y last-child */
 
 /* primer elemento de "ul" de tipo "li"*/
+body{
+/* tipo de letra tomada de Google font */
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
 ul li:first-child{
 	font-size: 1em;
 	_color: blue;

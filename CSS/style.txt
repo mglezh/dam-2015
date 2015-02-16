@@ -147,7 +147,9 @@ Modelo de cajas
 		Nota: 	IMG = none | url("../.../*.*") | inherit
 				POS = XX YY|left top|left center|left bottom|right top|right center
 					|right bottom|center top|center center|center bottom
-				SIZE 		= [ <length> | <percentage> | auto ]{1,2} | cover | contain
+				SIZE 		= [ <length> | <percentage> | auto ]{1,2} 
+					| cover 	- La imagen siempre cubre todo el área de la pantalla
+					| contain 	- La imagen siempre se muestra completa
 				REPEAT 		= repeat|repeat-x|repeat-y|no-repeat|initial|inherit
 				ATTACHMENT 	= scroll|fixed|local|initial|inherit	
 
@@ -163,7 +165,11 @@ Modelo de cajas
 		background-size: 		SIZE_1,... SIZE_N
 		background-origin: 		border-box|padding-box|content-box|initial|inherit - Zona a cubrir con el background
 		background-clip: 		border-box|padding-box|content-box|initial|inherit - Zona a cubrir con el background
-
+	Fondo degradado
+		background: linear-gradient(to top|right|bottom|left, 
+		RGBA_1 [%],	- % de la caja en el que se llega a este color
+		,... RGBA_N [%]);
+		background: radial-gradient(RGBA_1 [%], ..., RGBA_N [%]);
 
 Posicionamiento de la caja
 	position:  	  static	- Posicionamiento normal
@@ -172,7 +178,7 @@ Posicionamiento de la caja
 							 o al origen de un elemento contenedor que no tenga posicionamiento normal
 				| sticky	- 
 				| fixed		- Posicionamiento fijo  respecto al origen de la pantalla 
-							 o al origen de un elemento contenedor que no tenga posicionamiento normal, no se ve afectado por el scroll
+							 , no se ve afectado por el scroll
 
 	top:	XX
 	lef:	XX
@@ -230,6 +236,15 @@ Tipografía
 	letter-spacing: XX 		- espaciamiento de letras
 	word-spacing: 	XX 		- espaciamiento de palabras
 
+	Sombra
+			length = XX(desplazamiento a la derecha) YY(desplazamiento hacia abajo) [XX (Desenfoque)]?
+			SHADOW = [ length && RGBA? ]
+		text-shadow: none | SHADOW_1,... SHADOW_N
+		Ejemplo
+		 	text-shadow: 0.2em 0.5em 0.1em #600,
+	                	-0.3em 0.1em 0.1em #060,
+	                 	 0.4em -0.3em 0.1em #006
+
 Enlaces - Tipografía que se emplea
 	color: ...
 	font-weight: ...
@@ -273,6 +288,46 @@ Sombras
 		box-shadow: inset 2px 2px 2px 2px black;
 		box-shadow: 10px 10px #888, -10px -10px #f4f4f4, 0px 0px 5px 5px #cc6600;
 
+Fuentes WEB
+	Definición de la fuente (https://www.google.com/fonts/)
+		@font-face{
+			font-family: ....
+			src: 	url() format(),
+					url() format(),
+					url() format();
+			font-weight:
+			font-style:
+		}
 
-Cursor ¿?
+	fontsquirrel.com
+	Un web font generador. Me da la fuente en varios formatos WEB y un fichero con lo que tengo que poner en el CSS. Reduce además el tamaño de los ficheros de fuentes, al optimizarlos para la WEB
+	
+Multiples columnas de texto.
+	columns: <column-width> || <column-count>
+	column-count:
+	column-width:
+	column-gap: 	<length> | normal
+	column-rule:	<column-rule-width> || <column-rule-style> || [ <column-rule-color> | transparent ]
+	column-span:	none | all
+
+Media queries
+	@media (min-width: 700px) { ... }
+	@media tv  {}
+
+	and
+	or
+	NOT
+		......................................
+		Primero diseño para móviles y luego sigo para arriba
+
+		@media (min-width:700px) and (orientación: landscape)
+
+		tablet
+
+		@media
+
+		PC
+
+
+Cursor - Se puede cambiar el cursor, pero no se debe
 

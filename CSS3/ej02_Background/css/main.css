@@ -7,4 +7,5 @@ body{
 	background-image: url("../img/ribbon.png"),url("../img/decoration.png"),url("../img/old_paper.jpg");
 	background-repeat: no-repeat;
 	background-position: right bottom,  left top, center center ;
+	background-size: auto, auto, cover;
 }
