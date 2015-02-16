@@ -248,7 +248,7 @@ Listas
 	list-style-position: inside | outside | inherit
 					- Cambia la posición de la viñeta
 	list-style-image: url | none | inherit
-					- Poner imagen por viñeta
+					- Pone imagen por viñeta
 
 Formularios
 	- Agrupar label e input dentro de un div
