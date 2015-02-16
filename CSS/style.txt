@@ -328,6 +328,38 @@ Media queries
 
 		PC
 
+Transformaciones 	- Necesitan prefijos para móviles
+					- Se conserva el espacio original de la caja
+	transform-origin: 		-Por defecto en el centro de caja
+	transform:	TRANSFORM_1(....) ... TRANSFORM_N(...);
+		Nota: 	SX = 0.0-1
+				SY = 0.0-1
+				ANGLE = XXdeg | XXrad
+		translate (XX[,YY]) - Si no se indica el valor YY, su valor es 0.
+		translateX(XX)		- Aplica una traslación 2D en el eje x.
+		translateY(YY)		- Aplica una traslación 2D en el eje y.
+		scale(SX[, SY])		- Si no se indica el valor SY, es igual a SX.
+		scaleX(SX)
+		scaleY(SY)
+
+		rotate(ANGLE): aplica una operación de rotación especificada por los ángulos del parámetro, y tomando como origen de la roptación el punto definido por transform-origin.
+
+		skew(ANGLE_1[,ANGLE_2]): aplica una operación de inclinación en el eje X y en el eje X. Si no se indica el valor ANGLE_2, su valor es 0.
+		skewX(ANGLE): aplica una operación de inclinación en la horizontal
+		skewY(ANGLE): aplica una operación de inclinación en la vertical
+Transformaciones 3D
+	perspective-origin: 
+	perspective:
+
+Transiciones		- Solo se animan propiedades que tengan un valor numérico
+
+		Nota: TIME = XXs | XXms
+	transition-property: none | all | PROPERTY_1 | ... PROPERTY_N
+	transition-duration: TIME_1 [, TIME_2]*
+	transition-timing-function: (ease, linear, ease-in, ease-out o ease-in-out) cubic-bezier(0.6, 0.1, 0.15, 0.8)
+	transition-delay: TIME_1 [, TIME_2]*
+
+	transition: <transition> [, <transition>]*
 
 Cursor - Se puede cambiar el cursor, pero no se debe
 
