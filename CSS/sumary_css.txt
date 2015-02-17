@@ -355,11 +355,23 @@ Transiciones		- Solo se animan propiedades que tengan un valor numérico
 
 		Nota: TIME = XXs | XXms
 	transition-property: none | all | PROPERTY_1 | ... PROPERTY_N
+							-propiedades a las que se le van aplicar las transiciones (incluye a transform)
 	transition-duration: TIME_1 [, TIME_2]*
 	transition-timing-function: (ease, linear, ease-in, ease-out o ease-in-out) cubic-bezier(0.6, 0.1, 0.15, 0.8)
 	transition-delay: TIME_1 [, TIME_2]*
 
 	transition: <transition> [, <transition>]*
+
+Animaciones
+	SELECTOR {
+	    animation-duration:
+	    animation-name: 
+
+	}
+	
+	@keyframes IDENTIFIER{
+
+	}
 
 Cursor - Se puede cambiar el cursor, pero no se debe
 

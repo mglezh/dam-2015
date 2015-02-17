@@ -1,0 +1,60 @@
+
+        body {
+            margin: 0px;
+        }
+        #container{
+            background: #666 url(../ej03_tree.jpg) no-repeat -60px 0;
+            width: 420px;
+            height: 480px;
+            position: relative;
+        }
+        .snowflake {
+            color: #fff;
+            font-size: 2em;
+            position: absolute;
+            animation-name: snowfall;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        .snowflake.f1 {
+            left: 40px;
+            animation-duration: 4.8s;
+        }
+        .snowflake.f2 {
+            font-size: 1.8em;
+            left: 120px;
+            animation-duration: 4s;
+        }
+        .snowflake.f3 {
+            left: 200px;
+            animation-duration: 3.5s;
+        }
+        .snowflake.f4 {
+            font-size: 1.5em;
+            left: 280px;
+            animation-duration: 4.2s;
+        }
+
+        .snowflake:hover{
+            animation-play-state: paused;
+        }
+
+        @keyframes snowfall {
+            from {
+                top: -10px;
+            }
+         
+            75% {
+                opacity: 0.9;
+            }
+
+            90% {
+                opacity: 0;
+            }
+
+            to {
+                top: 480px;
+                opacity: 0;
+                transform: translateX(60px) rotate(720deg);
+            }
+        }

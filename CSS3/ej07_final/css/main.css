@@ -1,0 +1,50 @@
+.start {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 5em;
+}
+
+#clock {
+    position: relative;
+    width: 378px;
+    height: 378px;
+    background-image: url('../img/clockFace.png');
+    left: 50%;
+    margin: 5em 0 0 -189px;
+}
+
+#clock div {
+    position: absolute;
+}
+
+
+/* ANIMACIONES Y TRANSFORMACIONES */
+
+#second{
+    animation-name: kfrotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 6s;
+    animation-timing-function:steps(60, end);
+}
+#minute{
+    animation-name: kfrotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 360s;
+}
+#hour{
+    animation-name: kfrotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 4320s;
+}
+        @keyframes kfrotate {
+            from {
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }

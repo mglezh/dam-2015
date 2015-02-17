@@ -1,0 +1,49 @@
+#container { width: 500px; height:500px; position: relative;}
+
+.box { 
+    transition-property: color background-color top left height width transform;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    font-size: 20px;
+    padding: 5px;
+    transition-duration: 3s;
+    transition-timing-function: linear;
+}
+
+.ex01 .box {
+    transform: translate(10px,10px);
+}
+.ex02 .box {
+    transform: translate(10px,20px);
+}
+.ex03 .box {
+    transform: translate(10px,30px);
+}
+.ex04 .box {
+    transform: translate(10px,40px);
+}
+
+#container:hover .box {
+    transform: translateX(450px) scale(0.5,0.5) rotate(990deg);
+    background-color: blue;
+    color: yellow;
+    font-size: 36px;
+}
+
+.ex01,.ex02,.ex03,.ex04{
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+#container:hover .ex01,
+#container:hover .ex03{
+    transform: translateY(110px);
+}
+
+#container:hover .ex02, 
+#container:hover .ex04 {
+    transform: translateY(-110px);
+}
+
