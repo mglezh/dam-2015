@@ -18,33 +18,32 @@
     position: absolute;
 }
 
-
 /* ANIMACIONES Y TRANSFORMACIONES */
 
-#second{
+#clock div{
     animation-name: kfrotate;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
+}
+
+#second{
     animation-duration: 6s;
     animation-timing-function:steps(60, end);
 }
 #minute{
-    animation-name: kfrotate;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
     animation-duration: 360s;
-}
-#hour{
-    animation-name: kfrotate;
-    animation-iteration-count: infinite;
     animation-timing-function: linear;
-    animation-duration: 4320s;
 }
-        @keyframes kfrotate {
-            from {
-            }
 
-            to {
-                transform: rotate(360deg);
-            }
-        }
+#hour{
+    animation-duration: 4320s;
+    animation-timing-function: linear;
+}
+
+@keyframes kfrotate {
+    from {
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -74,58 +74,50 @@ body {
 /* ANIMACIONES Y TRANSICIONES */
 .view h2 {
   transition-property: transform;
-  transition-duration: 1s;
-  transition-delay: 0.5s;
+  transition-duration: 300ms;
+  transition-delay: 100ms;
   transition-timing-function: linear;
   transform: translateY(-100px);
 }
 
 .view img {
   transition-property: transform;
-  transition-duration: 1s;
+  transition-duration: 400ms;
   transition-timing-function: linear;
 }
 
 .view p{
   transition-property: transform;
-  transition-duration: 1s;
-  transition-delay: 0.5s;
+  transition-duration: 300ms;
+  transition-delay: 100ms;
   transition-timing-function: linear;
   transform: translateY(150px);
 }
 
 .view a.info{
   transition-property: opacity;
-  transition-duration: 1s;
-  transition-delay: 0.9s;
+  transition-duration: 300ms;
+  transition-delay: 200ms;
   transition-timing-function: linear;
   opacity: 0;
 }
 
 .view .mask {
   transition-property: opacity;
-  transition-duration: 1.4s;
-  transition-delay: 0.1s;
+  transition-duration: 300ms;
+  transition-delay: 100ms;
   transition-timing-function: linear;
   opacity: 0;
-}
-
-.view:hover h2{
-  transform: translateY(0px);
 }
 
 .view:hover img{
   transform: scale(1.5, 1.5);
 }
-
+.view:hover h2,
 .view:hover p{
   transform: translateY(0px);
 }
-
-.view:hover a.info{
-  opacity: 1;
-}
-
+.view:hover a.info,
 .view:hover .mask {
   opacity: 1;
 }
