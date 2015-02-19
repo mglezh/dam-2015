@@ -417,6 +417,7 @@ Responsive WEB design - http://www.arkaitzgarro.com/responsive-web-design/
 		initial-scale: controla el nivel de zoom inicial al cargarse la página. 
 		Las propiedades maximum-scale, minimum-scale, y user-scalable controlan como el usuario puede realizar zoom sobre la página.
 
+jquerymobile
 foundation
 bootstrap
 
