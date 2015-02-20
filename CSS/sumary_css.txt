@@ -1,4 +1,4 @@
-﻿/* 	Comentarios en CSS */
+/* 	Comentarios en CSS */
 
 Importar otros ficheros CSS
 	@import "/css/colores.css";
@@ -419,6 +419,7 @@ Responsive WEB design - http://www.arkaitzgarro.com/responsive-web-design/
 
 jquerymobile
 foundation
+wrapboostrap
 bootstrap
 
 	<!-- Latest compiled and minified CSS -->

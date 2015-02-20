@@ -1,0 +1,49 @@
+underscore.js
+
+	Para chequear tipos y más cosas...
+
+
+Funciones
+	function namefunction(arguments) { ... }
+
+	var fnc = function(arguments) { ... };
+
+	var fnc = function namefunction(arguments) { ... };
+
+		fnc() = namefunction() = dentro de la función emplear arguments.callee()
+
+This
+
+Argumentos
+	var sum = function() {
+	    var i, sum = 0;
+	    for (i = 0; i < arguments.length; i += 1) {
+	        sum += arguments[i];
+	    }
+	    return sum;
+	};
+
+	document.writeln(sum(4, 8, 15, 16, 23, 42)); // 108
+
+Funciones como argumentos
+
+Funciones anónimas
+
+Funciones anónimas autoejecutables
+
+	(function(){
+	  var foo = 'Hola mundo';
+	})();
+
+Callbacks
+
+	request = prepare_the_request();
+	response = send_request_synchronously(request);
+	display(response);
+	
+	El problema aquí, es que esperamos la respuesta del servidor, por lo que bloqueamos la ejecución del script hasta obtener una respuesta. Una estrategia mucho mejor es realizar una llamada asíncrona, proporcionando una función de respuesta (callback) que se ejecutará cuando la respuesta esté disponible:
+
+	request = prepare_the_request();
+	send_request_asynchronously(request, function (response) {
+	    display(response);
+	});
