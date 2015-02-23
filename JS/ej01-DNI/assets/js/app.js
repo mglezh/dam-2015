@@ -19,19 +19,24 @@
                     break;
             }
 
-            dni.match(/^[0-9]{8}{a-zA-Z}$/)
+//          sintax_ok = /^[0-9]{8}{a-zA-Z}$/.test(dni)
+			
+			dni = dniArr.join("");
+
 	        var dniNumber = parseInt(dni);
             /* Comprobando la letra */
             if (letras[dniNumber % 23] == dniArr[8]) {
 	            /* Comprobando que sean números los primeros 8 elementos */
-	            for (var i = 0; i < dniArr.length - 1; i++) {
+	            var i;
+	            for (i = 0; i < dniArr.length - 1; i++) {
 	                if (isNaN(dniArr[i])) break;
 	            }
+	            if (i == (dniArr.length - 1)) ok = true;
 	        }
-		{
+		
         }
         return ok;
-    }
+    };
 
     console.log(validarDNI("72754011C"));
     console.log(validarDNI("Y3623503M"));

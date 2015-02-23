@@ -1,7 +1,10 @@
 underscore.js
-
 	Para chequear tipos y más cosas...
+	Tiene montones de funciones que el JS no tiene por defecto
 
+typeof y instanceof
+	typeof variable;             // devuelve "object"
+	variable instanceof String;  // devuelve true
 
 Funciones
 	function namefunction(arguments) { ... }
@@ -47,3 +50,87 @@ Callbacks
 	send_request_asynchronously(request, function (response) {
 	    display(response);
 	});
+
+Expresiones regulares
+  REGEXP = /Expresion/Flag
+
+  	metodos
+  		REGEXP.EXEC(STRING)
+	  	REGEXP.TEST(STRING) - Devuelve true o false
+	   	string.match(REGEXP)
+	   	STRING.REPLACE(SEARCHVALUE, REPLACEVALUE)
+	   	STRING.SEARCH(REGEXP)
+
+	Expresion
+		  	^A 	'A'	al principio de la entrada
+	  	A$	'A' al final de la entrada
+	  	a*
+	  	a+	Todas las 'a'
+	  	a?
+	  	. 	Caracter comodin (cualquier caracter)
+
+	  	|	Una de varias opciones
+	  	[ ]	Agrupa caracteres en grupos o clases de caracteres
+	  	()	Parecido a []
+	  	{}
+	  	\	Para presentar caracteres especiales
+
+			\t: representa un tabulador.
+			\r: representa el "retorno de carro".
+			\n: representa la "nueva línea".
+			\e: representa la tecla "Esc" o "Escape".
+			\d: representa un dígito del 0 al 9.
+			\w: representa cualquier carácter alfanumérico (incluidos los guiones bajos _).
+			\s: representa un espacio en blanco (espacios en blanco, tabuladores y nuevas líneas).
+				\D: representa cualquier carácter que no sea un dígito del 0 al 9.
+				\W: representa cualquier carácter no alfanumérico.
+				\S: representa cualquier carácter que no sea un espacio en blanco.
+			\b: marca el inicio y el final de una palabra.
+
+			  Flag
+				g	Global (hace coincidir el patrón todas las veces posibles, aunque puede variar según el método).
+				i	Insensitive (ignora las mayúsculas y minúsculas).
+				m	Multiline (los caracteres ^ y $ pueden coincidir con caracteres multilínea).
+
+
+Objetos
+	var obj = new Object(); - No se usa
+	var obj = {};
+	var obj = {
+		parametro : valor;
+		.
+		.
+		.
+	}						- Ojo con los : en lugar de =
+
+	Pasar objetos literales como parámetros en lugar de parámetros sueltos
+
+		domElement.fancybox({
+		    maxWidth    : 800,
+		    maxHeight   : 600,
+		    fitToView   : false,
+		    width       : '70%',
+		    height      : '70%',
+		    autoSize    : false,
+		    closeClick  : false,
+		    openEffect  : 'none',
+		    closeEffect : 'none'
+		});
+
+
+	valores por defecto
+
+	Paso por referencia
+
+	Herencia
+
+		- Al llamar a un metodo se busca primero en la instancia del objeto y si no lo tiene se le pregunta a su prototipo "prototype" (el objeto del que hereda)
+
+borrar propiedades de un objeto
+	delete property
+
+Crear una clase no es más que definir una función. Por convenio se suele iniciar con mayúsculas.
+	function Shape() {this.x=0;this.y=0}  	- Definición de una clase
+
+	var shape = new Shape();				- Instancia de la clase Shape
+
