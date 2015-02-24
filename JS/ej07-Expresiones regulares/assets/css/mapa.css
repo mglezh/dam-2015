@@ -1,0 +1,32 @@
+body {
+    padding-top: 50px;
+}
+#map {
+    height: 300px;
+}
+.navbar {
+    margin-bottom: 0;
+}
+.navbar .container {
+    padding-left: 10px;
+}
+.container {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.mapa {
+    padding-left: 0px;
+    padding-right: 0px;
+    position: fixed;
+}
+.mapBox {
+    margin-bottom: 310px;
+    z-index: 3;
+}
+.listBox {
+    z-index: -2;
+}

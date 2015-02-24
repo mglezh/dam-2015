@@ -52,36 +52,44 @@ Callbacks
 	});
 
 Expresiones regulares
-  REGEXP = /Expresion/Flag
+	REGEXP = /EXPRESION/Flag
 
   	metodos
-  		REGEXP.EXEC(STRING)
-	  	REGEXP.TEST(STRING) - Devuelve true o false
-	   	string.match(REGEXP)
-	   	STRING.REPLACE(SEARCHVALUE, REPLACEVALUE)
-	   	STRING.SEARCH(REGEXP)
+  		REGEXP.exec(STRING)		- Devuelve un array con las porciones del string 
+  								que coinciden en formato con los grupos de la expresión regular
+	  	REGEXP.test(STRING) 	- Devuelve true o false
 
-	Expresion
-		  	^A 	'A'	al principio de la entrada
-	  	A$	'A' al final de la entrada
-	  	a*
-	  	a+	Todas las 'a'
-	  	a?
+	   	string.match(REGEXP) 	- Devuelve un arreglo con todas las coincidencias con la
+	   							expresión regular
+	   	string.replace(REGEXP | string_SEARCHVALUE, string_REPLACEVALUE)
+	   							- Cambia todas las coincidencias con la expresión regular por el string de recambio
+	   	string.searh(REGEXP)
+
+	EXPRESION
+		^A 	Debe empezar con "A"
+	  	A$	Final de la entrada. Debe terminar con una "A"
+	  	a?	Opcional. Puede o no llevar una "a"
 	  	. 	Caracter comodin (cualquier caracter)
 
-	  	|	Una de varias opciones
-	  	[ ]	Agrupa caracteres en grupos o clases de caracteres
-	  	()	Parecido a []
-	  	{}
-	  	\	Para presentar caracteres especiales
+	  	|		Una de varias opciones [A-Z] | [0-9]   (A | Z)
+	  	[ ]		Agrupa caracteres en grupos o clases de caracteres.
+	  			Dentro de [] los caracteres ".+*"" dejan de ser caracteres especiales
+	  	()		Parecido a []
+	  	[]{n}	Lo anterior a {} se repite n veces [0-9]{3} Tres caracteres numericos
+	  	[]{n,m} Se repite de n a m veces
+	  	*		Se repite 0 o más veces {0,}
+	  	+		Se repite 1 o más veces {1,}
+	  	-		Para crear rangos [a-zA-ZñÑ]  [0-9]
+	  	\		Para presentar caracteres especiales
+
 
 			\t: representa un tabulador.
 			\r: representa el "retorno de carro".
 			\n: representa la "nueva línea".
 			\e: representa la tecla "Esc" o "Escape".
-			\d: representa un dígito del 0 al 9.
+			\d: = [0-9]{1} Representa un dígito del 0 al 9
 			\w: representa cualquier carácter alfanumérico (incluidos los guiones bajos _).
-			\s: representa un espacio en blanco (espacios en blanco, tabuladores y nuevas líneas).
+			\s: representa un espacio en blanco (espacios en blanco / tabuladores / nuevas líneas).
 				\D: representa cualquier carácter que no sea un dígito del 0 al 9.
 				\W: representa cualquier carácter no alfanumérico.
 				\S: representa cualquier carácter que no sea un espacio en blanco.
@@ -91,6 +99,8 @@ Expresiones regulares
 				g	Global (hace coincidir el patrón todas las veces posibles, aunque puede variar según el método).
 				i	Insensitive (ignora las mayúsculas y minúsculas).
 				m	Multiline (los caracteres ^ y $ pueden coincidir con caracteres multilínea).
+
+	Si a un texto le paso una expresión regular, me devuelve un array con todas las coincidencias
 
 
 Objetos
@@ -133,4 +143,27 @@ Crear una clase no es más que definir una función. Por convenio se suele inici
 	function Shape() {this.x=0;this.y=0}  	- Definición de una clase
 
 	var shape = new Shape();				- Instancia de la clase Shape
+
+
+funcionName.call(THIS,....)
+funcionName.bind(THIS)(....);
+funcionName.apply(THIS,...)
+ 		- Llama a una función cambiandole el contexto
+		- Lo que se mande como THIS en estos llamados se convierten en el this de la función de destino
+		- ... = parámetros de la función
+
+backbone.js
+		Para facilitar el manejo de clases, objetos
+
+
+Arrays
+	var arr = new Array();
+	var emptyArr = [];
+	 
+	var numbersArr = ['zero', 'one', 'two', 'three', 'four','five', 'six', 'seven', 'eight', 'nine'];
+
+	Propiedades
+		length
+	Metodos
+
 
