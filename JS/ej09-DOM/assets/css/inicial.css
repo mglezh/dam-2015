@@ -1,0 +1,7 @@
+.header .navbar:hover + .separa{
+	padding: 100px;
+}
+
+.main{
+	margin-top: 63px;
+}

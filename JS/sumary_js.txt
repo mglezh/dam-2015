@@ -166,4 +166,46 @@ Arrays
 		length
 	Metodos
 
+DOM
+	document.getElementById("cabecera");
+	document.getElementsByTagName("p");
+		- Devuelve un array con todos los elementos con el Tag especificado o un array empty [] si no encuentra ninguno
+	document.getElementsByName("especial");
+		- Devuelve un array con todos los elementos con el className especificado o un array empty [] si no encuentra ninguno
+	document.querySelector(".enlace"); 		
+		- selector CSS. Solo devuelve el primer elemento o null si no existe ninguno
+		- Los "querySelector.." son mucho más rapidos que los "getElements..."
+	document.querySelectorAll(".enlace"); 	
+		- selector CSS. Devuelve un array con todos los elementos que cumplan con el selector o un array empty [] si no encuentra ninguno
 
+	Agregar elementos
+		// Crear nodo de tipo Element
+		var parrafo = document.createElement("p");
+		// Crear nodo de tipo Text
+		var contenido = document.createTextNode("Hola Mundo!");
+		// Añadir el nodo Text como hijo del nodo Element
+		parrafo.appendChild(contenido);
+		// Añadir el nodo Element como hijo de la pagina
+		document.body.appendChild(parrafo);
+
+	Borrar elementos
+		var parrafo = document.getElementById("provisional");
+		parrafo.parentNode.removeChild(parrafo);
+
+eventos
+
+
+		evento.preventDefault();
+		evento.stopPropagation();
+
+
+		elemento.addEventListener('click', addElement, 	 false);
+		elemento.addEventListener('click', log, 	 	 false);
+		- Se le puede agregar más de una función a un mismo evento
+
+formularios
+
+		En los radiobuttom y los checkbox se pregunta por el "checked" 
+		En el select se pregunta por el "value" del Select
+
+		
