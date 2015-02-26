@@ -1,97 +1,92 @@
+// Se le agrega la función "validate" al prototipo de "form" para que sea válido 
+// a todos los formularios
 HTMLFormElement.prototype.validate = function() {
-
-	var validatorMsg = "";
 
 	var validator = {
 		required : function(val) {
-			if (val && typeof val === "string") {return true;}
-			else return false;
+			return 	val.length > 0 &&
+					val !== undefined &&
+					val !== null &&
+					!/^\s+$/.test(val);
 		},
 		email : function(val){
 			var exp = /^\w([\w\-.]*\w+)?@[a-zA-Z0-9]([\w\-.]*\w+)?\.[a-zA-z]{2,3}$/;
-			if (exp.test(val)) {return true;}
-			else return false;
-		},
-		checkbox : function(checked){
-			if (checked) {return true;}
-			else return false;
+			return exp.test(val);
 		},
 		password: function (val){
-			var exp1 = /\w{6,}/;
-			var exp2 = /[a-z]{1,}/;
-			var exp3 = /[A-Z]{1,}/;
-			var exp4 = /[0-9]{1,}/;
-			if (exp1.test(val) && 
-				exp2.test(val) && 
-				exp3.test(val) && 
-				exp4.test(val)) return true;
-			else return false;
+			return (/\w{6,}/.test(val) && 
+					/[a-z]{1,}/.test(val) && 
+					/[A-Z]{1,}/.test(val) && 
+					/[0-9]{1,}/.test(val));
 		}
 	};
 
-	var checkedRequired = false;
-	var checked = false;
+	var validatorMsg = "";
 
 	var validateInput = function (input){
-		if ((input.classList.length !== 0) && 
-			input.classList.contains('required')){
-			if (!validator.required(input.value)) {
-				validatorMsg += "	Rellene el campo. " + input.name + '\n';
-			} else { 
-				// Si el campo value tiene contenido lo valido para email y pass
-				if (input.classList.contains('email')) {
-					if (!validator.email(input.value)){ 
-						validatorMsg += "	El campo mail no es válido. \n";
-					}
-				}
-				if (input.type === "password"){
-					if (!validator.password(input.value)){
-						validatorMsg += "	El campo password no es válido. \n";
-					}
-				} 
+		// primero prueba que no esté vacio
+		if (!validator.required(input.value)) {
+			input.classList.add("has-error");
+			validatorMsg += "	El campo " + input.name + " es obligatorio \n";
+		} else { 
+			input.classList.remove("has-error");
+			// Si el campo value tiene contenido valido su contenido 
+			// para email y pass
+			if (input.classList.contains('email')) {
+				if (!validator.email(input.value)){ 
+					validatorMsg += "	El campo mail no es válido. \n";
+					input.classList.add("has-error");
+				} else input.classList.remove("has-error");
 			}
-			if (input.type === "checkbox"){
-				checkedRequired = true;
-				if (validator.checkbox(input.checked)){
-					checked = true;
-				}
+			if (input.type === "password"){
+				if (!validator.password(input.value)){
+					validatorMsg += "	El campo password no es válido. \n";
+					input.classList.add("has-error");
+				} else input.classList.remove("has-error");
 			} 
-		} 					
+		}
+		if (input.type === "checkbox"){
+			if (!input.checked){
+				validatorMsg += "	El campo " + input.name + " no está marcado. \n";
+			}
+		} 
 	};
+
+	var required = this.querySelectorAll(".required");
 
 	var validate = function(e){
 		var evento = e || window.event;
-		evento.preventDefault();
+		var input = evento.target; //Solo para "focus" y "blur"
 
 		switch (evento.type) {
+			case "focus"  : 
+				input.classList.remove("has-error");
+				break;
 			case "blur"	  : 
-				var input = evento.target;
-				if (input.type === "text" ||
-					input.type === "checkbox" ||
-					input.type === "password") {
-					validatorMsg += "Validando entrada.";
-					validateInput(input);
-					console.log(validatorMsg);
-					validatorMsg = "";
-				}
+				validatorMsg += "Validando entrada.";
+				validateInput(input);
+				console.log(validatorMsg);
+				validatorMsg = ""; 
 				break;
 			case "submit" : 
-				validatorMsg += "Validando formulario. \n";
-				checkedRequired = false;
-				checked = false;
+				console.log("Validando formulario. \n");
 
-				for (var i = 0; i <this.length; i++) validateInput(this[i]);
-
-				if (checkedRequired && !checked) {
-					validatorMsg += "	Tiene que seleccionar una condición \n";
+				for (var i = 0; i <required.length; i++) {
+					validateInput(required[i]);
 				}
-				console.log(validatorMsg);
-				validatorMsg = "";
+
+				if (validatorMsg.length) {
+					console.log(validatorMsg);
+					alert(validatorMsg);
+					validatorMsg = "";
+					evento.preventDefault();
+				} break;
 		}
 	};
 
 	this.addEventListener('submit', validate, false);
-	var formElements = this.querySelectorAll('.required');
-	for (var i = 0; i < formElements.length; i++)
-		formElements[i].addEventListener('blur',   validate, false);
+	for (var i = 0; i < required.length; i++) {
+		required[i].addEventListener('blur',   validate, false);
+		required[i].addEventListener('focus',  validate, false);
+	}
 };

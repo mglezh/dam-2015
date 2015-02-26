@@ -151,6 +151,13 @@ funcionName.apply(THIS,...)
  		- Llama a una función cambiandole el contexto
 		- Lo que se mande como THIS en estos llamados se convierten en el this de la función de destino
 		- ... = parámetros de la función
+		- OJO: THIS puede ser cualquier cosa, un objeto, una variable.
+		  Ej: THIS = {functionName, variable, element }
+		      y en la función podría acceder 
+		      a ellos como
+		      	this.functionName
+		      	this.variable
+		      	this.element
 
 backbone.js
 		Para facilitar el manejo de clases, objetos
