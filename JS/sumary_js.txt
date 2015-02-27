@@ -200,11 +200,8 @@ DOM
 		parrafo.parentNode.removeChild(parrafo);
 
 eventos
-
-
 		evento.preventDefault();
 		evento.stopPropagation();
-
 
 		elemento.addEventListener('click', addElement, 	 false);
 		elemento.addEventListener('click', log, 	 	 false);
@@ -214,5 +211,19 @@ formularios
 
 		En los radiobuttom y los checkbox se pregunta por el "checked" 
 		En el select se pregunta por el "value" del Select
+
+FrameWork
+	MVC- Modelo vista controlador
+	Modelo    	- JS
+	Vista     	- HTML y CSS
+	Controlador -??
+
+	El modelo no se comunica directamente con la vista, se comunican a través del controlador.
+
+campus.codeschool
+	angularsjs.org
+
+
+ionicframework - Como boostrap (solo es css) pero para aplicaciones móviles.
 
 		

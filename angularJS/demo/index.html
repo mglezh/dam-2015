@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio AngularJS</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/vendors/angular.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1 class="h2">TODO List</h1>
+        <div class="well" ng-controller="TodoController">
+            <form action="#" class="form-inline" ng-submit="addTodo()">
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="inputText" size="40" >
+                    <button type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </div>
+            </form>
+            <ul class="list-unstyled">
+                <li ng-repeat="index in todos">
+                    <input type="checkbox" ng-model="index.done">
+                    <span> {{index.task}} </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

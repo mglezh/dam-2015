@@ -1,0 +1,32 @@
+
+Nuevos atributos para los formularios
+	autocomplete	- Para que aparezcan opciones escritas antes
+	min
+	max 
+	step
+	multiple		- Para cargar multiples ficheros 
+	pattern			- Para poner expresiones regulares para validar la entrada
+	autofocus		- Para forzar el foco
+	placeholder		- Textos de ayuda (desaparecen cuando escribes)
+	required		- 
+	form 			- Para asociar un "input" a un formulario aunque esté fuera de el
+
+Listas desplegables (list & datalist)
+	Puede emplearse con tipo "text","url" y "mail"
+
+	<input id="form-person-title" type="text" list="mylist">
+	<datalist id="mylist">
+	    <option label="Mr" value="Mr">
+	    <option label="Ms" value="Ms">
+	    <option label="Prof" value="Mad Professor">
+	</datalist>
+
+Modernizer - Nos dice si el navegador tiene disponible determinado recurso de HTML5
+	<script src="/js/lib/vendor/modernizr-custom.min.js"></script>
+	- OJO Hay que ponerlo en la cabecera
+
+	if (Modernizr.boxshadow) {
+   // Podemos aplicar sombras!
+	} else {
+	   // La propiedad box-shadow no está disponible
+	}

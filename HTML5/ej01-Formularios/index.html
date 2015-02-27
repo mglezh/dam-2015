@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Formulario HTML5</title>
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script type="text/javascript" src="asset/js/scripts.js"></script>
+</head>
+
+<body>
+    <form action="servidor.php" method="POST" id="registro">
+        <fieldset>
+            <legend>Formulario HTML</legend>
+            <label for="email">Email:</label>
+            <input type="email" name="email">
+
+            <label for="url">URL:</label>
+            <input type="url" name="url" >
+
+            <label for="date">Date:</label>
+            <input type="date" name="date">
+
+            <label for="time">Time:</label>
+            <input type="time" name="time">
+
+            <label for="date-time">Date-Time:</label>
+            <input type="datetime" name="date-time">
+
+            <label for="month">Month:</label>
+            <input type="month" name="month">
+
+            <label for="week">Week:</label>
+            <input type="week" name="week">
+
+            <label for="number">Number:</label>
+            <input type="number" name="number">
+
+            <label for="range">Range:</label>
+            <input type="range" name="range" min="1" max="100" step="10">
+
+            <label for="tel">Telephone:</label>
+            <input type="tel" name="tel">
+
+            <label for="search">Search:</label>
+            <input type="search" name="search">
+
+            <label for="color">Color:</label>
+            <input type="color" name="color">
+
+            <label for="list">List:</label>
+            <input id="form-person-title" type="text" list="mylist" name="list" >
+            <datalist id="mylist">
+                <option label="Mr" value="Mr">
+                <option label="Ms" value="Ms">
+                <option label="Prof" value="Mad Professor">
+            </datalist>
+
+            <progress value="5" max="20">5</progress>
+
+            <meter value="91" min="0" max="100" low="40" high="90" optimum="100">A+</meter>
+
+            <input type="submit">
+
+        </fieldset>
+    </form>
+<!-- 
+    <script type="text/javascript" src="assets/js/validator.js"></script>
+ -->    <script type="text/javascript" src="assets/js/app.js"></script>
+</body>
+</html>
