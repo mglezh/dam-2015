@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<h1> Rellena tu CV </h1>
-		<form action="http://192.168.1.65/dam-2015/XHTML/post.php" method="GET" enctype="multipart/form-data">
+		<form action="http://127.0.0.1/server.php" method="GET" enctype="multipart/form-data">
 		<!-- 
 		 <form action="http://localhost/PHP/post.php" method="POST" enctype="multipart/form-data">
 		 -->
@@ -65,24 +65,24 @@
 					<!-- [] Hace que se envie un array para el Select, cada elemento sería una opción del Select -->
 						<optgroup label="Sistemas operativos">
 						<!-- optgroup parametros: label, disabled, selected -->
-							<option value="Op1"	selected="selected">Linux</option>
+							<option value="Opt_Linux"	selected="selected">Linux</option>
 							<!-- option parametros: selected, value, label, disabled -->
-							<option value="Op2"	selected="selected">Windows</option>
+							<option value="Opt_Windows"	selected="selected">Windows</option>
 						</optgroup>
 						<optgroup label="Lenguajes de programación">
 						<!-- optgroup parametros: label, disabled, selected -->
-							<option value="Op3"	selected="selected">C++</option>
+							<option value="Opt_C"	selected="selected">C++</option>
 							<!-- option parametros: selected, value, label, disabled -->
-							<option value="Op4">Java</option>
-							<option value="Op5">Basic</option>
+							<option value="Opt_J">Java</option>
+							<option value="Opt_B">Basic</option>
 						</optgroup>
 					</select>
 			</fieldset>
 
-			<fieldset>
+			<fieldset name="Otros[]">
 			    <legend>Otros: </legend>
-			    <input type="checkbox" > Carnet de conducir </input>
-			    <input type="checkbox" > Vehículo propio </input>
+			    <input type="checkbox" name="ChB_Carnet" > Carnet de conducir </input>
+			    <input type="checkbox" name="ChB_Coche" > Vehículo propio </input>
 			</fieldset>
 
 			<input type="submit">
