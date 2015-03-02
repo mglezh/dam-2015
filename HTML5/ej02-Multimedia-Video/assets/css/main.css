@@ -1,0 +1,17 @@
+.container {
+	width:80%;
+}
+
+img,
+object,
+video {
+    max-width: 100%;
+}
+
+#videoProgress
+{
+	width: 100%;
+}
+#Volumen{
+	width: 25%;
+}

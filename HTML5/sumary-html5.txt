@@ -30,3 +30,31 @@ Modernizer - Nos dice si el navegador tiene disponible determinado recurso de HT
 	} else {
 	   // La propiedad box-shadow no está disponible
 	}
+
+APIS de HTML5
+
+Atributos data-
+	data-VarName = "...."
+	Se pueden agregar como atributos a los elementos HTML5
+
+    Luego en JS puedo acceder en JS a las variables "VarName"
+
+Multimedia
+
+	video Atributos  
+		ver --- video.js
+		src 
+		autoplay
+		controls
+		poster
+		muted
+		loop
+		height
+		width
+		preload	
+		source 	- Para dar varias opciones de src por si el explorador no 
+				soporta algún formato de video
+				- Dentro de source puedo emplear media query
+	
+	video API
+		 

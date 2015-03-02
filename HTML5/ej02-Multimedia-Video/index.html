@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Video HTML5</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="playlist">
+            <ul class = "list-unlisted">
+                <l1 data-src="asset\video\"> <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></l1>
+                <l1 data-src="asset\video\"> <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></l1>
+                <l1 data-src="asset\video\"> <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></l1>
+            </ul>
+        </div>
+        <video id="Video">
+            <source src="assets\video\BMX.mp4">
+            <source src="assets\video\BMX.webm">
+            <p>Your browser doesn’t support video. </p>
+        </video>
+        <progress id="videoProgress" value="0" min="0" max="100"></progress>
+
+        <button class="Play"> <span class="glyphicon glyphicon-play" aria-hidden="true"> </button>
+        <button class="Pause"> <span class="glyphicon glyphicon-pause" aria-hidden="true"> </button>
+        <button class="Stop"> <span class="glyphicon glyphicon-stop" aria-hidden="true"> </button>
+        <button class="Begin"> <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"> </button>
+        <button class="Backward"> <span class="glyphicon glyphicon-step-backward" aria-hidden="true"> </button>
+        <button class="Forward"> <span class="glyphicon glyphicon-step-forward" aria-hidden="true"> </button>
+        <button class="End"> <span class="glyphicon glyphicon-fast-forward" aria-hidden="true">  </button>
+        <button class="FullScreen"> <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"> </button>
+        <input type="range" id="Volumen" min="0"max="100" step="1"></input>
+
+
+    </div>
+<!-- 
+    <script type="text/javascript" src="assets/js/validator.js"></script>
+ -->    <script type="text/javascript" src="assets/js/app.js"></script>
+</body>
+</html>
