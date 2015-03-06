@@ -1,0 +1,33 @@
+		BI- Para procesar los datos obtenidos de los sistemas y sacar indicadores.
+
+	ERP- Nucleo de la gestión de los sistemas empresariales (albaranes, facturas, nominas, contabilidad)
+		Ingeos
+		Navision
+		Bravo
+
+	CMR- Enfocado al cliente
+
+		Centralita IP- Integrada con los sistemas anteriores.
+
+	CMS (Sistema de gestion de contenidos) - Drupal / Joomla (administrar sitios web)
+		WCM (gestión de contenido web)
+		ECM (gestión de contenidos empresariales )
+
+Sistemas integrados / Correo / Calendario / Contactos 
+
+	GoogleApps	: Solo en la nube
+	Exchange	: En la nube y en app (ver Iaas, Paas, Saas )
+	Lotus
+	Zimbra
+
+eCOMERCE
+	
+
+Gestion de proyectos
+
+
+Tres capas de las aplicaciones
+	Presentación:		Drupal
+	Lógica:			AlFresco
+	Persistencia
+

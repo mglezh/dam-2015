@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Storage HTML5</title>
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+    <form action="servidor.php" method="POST" id="registro">
+        <fieldset>
+            <legend>Formulario HTML con Storage </legend>
+
+            <label for="email">Email:</label>
+            <input class="formElement" type="email" name="email">
+
+            <label for="url">URL:</label>
+            <input class="formElement" type="url" name="url" >
+
+            <label for="date">Date:</label>
+            <input class="formElement" type="date" name="date">
+
+            <label for="textarea">TextArea:</label>
+            <textarea class="formElement" name="textarea" id="textarea" cols="30" rows="10">Solo la primera vez</textarea>
+
+            <input type="submit">
+
+        </fieldset>
+    </form>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+</body>
+</html>

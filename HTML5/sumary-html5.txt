@@ -57,4 +57,52 @@ Multimedia
 				- Dentro de source puedo emplear media query
 	
 	video API
+
+Almacenamiento de datos
+	WebStorage
+		sessionStorage
+		localStorage
+
+			.setItem('nameString', 'valueString')
+			.getItem('nameString')
+			.removeItem()
+			.length
+			.clear()
+
+		EVENTOS DE ALMACENAMIENTO
+
+			StorageEvent {
+			    readonly DOMString key;
+			    readonly any oldValue;
+			    readonly any newValue;
+			    readonly DOMString url;
+			    readonly Storage storageArea;
+			};
+			storageArea hace referencia al objeto sessionStorage o localStorage. Estos eventos se lanzan dentro del objeto window:
+
+			function handleStorage(event) {
+			    event = event || window.event; // support IE8
+			    if (event.newValue === null) { // it was removed
+			        // Do somthing
+			    } else {
+			        // Do somthing else
+			    }
+			}
+			window.addEventListener('storage', handleStorage, false);
+
+
+	SQLite (No lo tienen IE, ni FireFox)
+
+	IndexedDB (No lo sòportan todos los navegadores)
+
+
+	ver: pouchdb.com
+	Librería con la que te olvidas del conflicto entre los navagadores para las bases de datos
+
+JSON
+	sessionStorage.setItem('videoDetails', JSON.stringify(videoDetails) );
+	var videoDetails = JSON.parse(sessionStorage.getItem('videoDetails');
+
+	json.org.
+	Librerías para codificar y decodificar JSON para todos los lenguajes.
 		 
