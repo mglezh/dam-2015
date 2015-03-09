@@ -91,13 +91,28 @@ Almacenamiento de datos
 			window.addEventListener('storage', handleStorage, false);
 
 
-	SQLite (No lo tienen IE, ni FireFox)
+	SQLite (No lo tienen IE, ni FireFox) Está descontinuandose
 
 	IndexedDB (No lo sòportan todos los navegadores)
 
 
 	ver: pouchdb.com
 	Librería con la que te olvidas del conflicto entre los navagadores para las bases de datos
+			var db = new PouchDB('dbname');
+
+			db.put({
+			  _id: 'dave@gmail.com',
+			  name: 'David',
+			  age: 68
+			});
+
+			db.changes().on('change', function() {
+			  console.log('Ch-Ch-Changes');
+			});
+
+			db.replicate.to('http://example.com/mydb');
+
+	ydn-db... Lo mismo de arriba
 
 JSON
 	sessionStorage.setItem('videoDetails', JSON.stringify(videoDetails) );
@@ -106,3 +121,10 @@ JSON
 	json.org.
 	Librerías para codificar y decodificar JSON para todos los lenguajes.
 		 
+
+Geolocalización	
+	getCurrentPosition
+	watchPosition
+	clearWatch
+
+WORKERS

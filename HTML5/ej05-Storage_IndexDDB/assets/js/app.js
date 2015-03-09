@@ -1,17 +1,13 @@
 
 (function(){
 	var tweet = {
-		id: "93483903490092",
+		id: "93483903490093",
 		text: "Dhdchbvhcbhcsbhdcbshdbchds",
 		author: "pp",
 		createdAt: "Mon Sep 24 03:35:21 +0000 2015"
 	};
 	//APP.DB.insert(tweet);
-	var datos = [];
-
-	var success = function(datos) {
-		console.log(datos);
-	};
-
-	//APP.DB.getAll(success);
+	APP.DB.get(tweet.id, function(t){
+		console.log(t);
+	});
 })();
