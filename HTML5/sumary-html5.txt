@@ -127,4 +127,9 @@ Geolocalización
 	watchPosition
 	clearWatch
 
-WORKERS
+Web WORKERS
+
+Web SOCKETS
+	Node.js
+	Ejercicio 08
+	server.js es el código que iría en el servidor

@@ -1,0 +1,20 @@
+windows.onload = function (){
+	var input = document.getElementById('id')
+
+	if (input) {
+	
+	}
+}
+
+$(function()){
+	var $input = $('#id');
+	// No es exactamente lo mismo $input sería un objeto JQUERY, que nunca
+	// sería false 
+	if ($input.length) {
+		// Es necesario emplear siempre el .length pq nunca será false
+	}
+}
+
+ api.jquery.com
+
+ Las animaciones son mejores en CSS3

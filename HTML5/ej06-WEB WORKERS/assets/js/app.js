@@ -9,9 +9,9 @@
 
 
 	calcular.addEventListener('click', function(e) {
-		// e.preventdefault();
+		e.preventDefault();
 		var num = numero.value;
-		this.postMessage(num);
+		worker.postMessage(num);
 	});
 
 	worker.addEventListener('message', function(e){
