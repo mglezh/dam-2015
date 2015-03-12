@@ -10,4 +10,7 @@ todoApp.controller('TodoController', ['$scope',function($scope){
 	$scope.addTodo = function(){
 		todos.push({done:false, task: $scope.inputText});
 	};
+	$scope.deleteTodo = function(){
+		todos.pop();
+	};
 }]);
